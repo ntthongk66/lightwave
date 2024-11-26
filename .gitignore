@@ -1,0 +1,7 @@
+*~
+*.o
+*.orig
+*.rej
+
+/lightwave
+.vscode
