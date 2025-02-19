@@ -72,7 +72,7 @@ LW_WFDB = "/usr/local/database "
 # DocumentRoot is the web server's top-level directory of (HTML) content.
 # The values below and in your Apache configuration file should match.
 # Note that it does not end with '/'.
-DocumentRoot = /home/ntthong/physionet/html
+DocumentRoot = /root/physionet/html
 
 # ServerName is the hostname of the web server, as specified in your Apache
 # configuration file.  The default setting below attempts to guess your server's
@@ -90,11 +90,11 @@ ScriptAlias1 = /cgi-bin/
 # ScriptAlias2 is the directory in which server scripts are to be installed.
 # It should match the second argument of the ScriptAlias directive in your
 # Apache configuration file.
-CGIDIR = /home/ntthong/physionet/cgi-bin/
+CGIDIR = /root/physionet/cgi-bin/
 
 # User is the user who "owns" processes started by the web server.
 # It should match the value of User in your Apache configuration file.
-User = ntthong
+User = root
 
 # LWCLIENTDIR is the directory for the installed LightWAVE client.
 LWCLIENTDIR = $(DocumentRoot)/lightwave
@@ -161,23 +161,23 @@ server:	lightwave
 # Install the sandboxed LightWAVE server.
 sandboxed-server:	sandboxed-lightwave
 	mkdir -p $(CGIDIR)
-	sudo install -m 4755 sandboxed-lightwave $(CGIDIR)
+	install -m 4755 sandboxed-lightwave $(CGIDIR)
 
 # Install the LightWAVE scribe.
 scribe:	  patchann scribedir
 	mkdir -p $(CGIDIR)
-# sudo sed s+/usr/local+$(WFDBROOT)+ <server/lw-scribe | \
+# sed s+/usr/local+$(WFDBROOT)+ <server/lw-scribe | \
 	#  sed s+/ptmp/lw+$(LWTMP)+ >$(CGIDIR)/lw-scribe
-	sudo sh -c "sed s+/usr/local+$(WFDBROOT)+ <server/lw-scribe |sed s+/ptmp/lw+$(LWTMP)+ >$(CGIDIR)/lw-scribe"
-	sudo chmod 777 $(CGIDIR)/lw-scribe
+	sh -c "sed s+/usr/local+$(WFDBROOT)+ <server/lw-scribe |sed s+/ptmp/lw+$(LWTMP)+ >$(CGIDIR)/lw-scribe"
+	chmod 777 $(CGIDIR)/lw-scribe
 
 # Set up a temporary directory on the server for backups of edit logs, and
 # make it writeable by the web server and the processes that it spawns.
 scribedir:
-	[ -d $(LWTMP) ] || sudo mkdir -p $(LWTMP)
-	sudo chmod 777 $(LWTMP)
-	sudo cp -p server/download.html $(LWTMP)
-# sudo chown $(User) $(LWTMP)
+	[ -d $(LWTMP) ] || mkdir -p $(LWTMP)
+	chmod 777 $(LWTMP)
+	cp -p server/download.html $(LWTMP)
+# chown $(User) $(LWTMP)
 
 # Compile the lightwave server.
 lightwave:	server/lightwave.c server/cgi.c server/*.h
@@ -191,7 +191,7 @@ sandboxed-lightwave:	server/lightwave.c server/cgi.c server/sandbox.c server/*.h
 
 # Compile and install patchann.
 patchann:	server/patchann.c
-	sudo $(CC) $(CFLAGS) server/patchann.c -o $(WFDBROOT)/bin/patchann $(LDFLAGS)
+	$(CC) $(CFLAGS) server/patchann.c -o $(WFDBROOT)/bin/patchann $(LDFLAGS)
 
 # Make a tarball of sources.
 tarball: 	 clean
