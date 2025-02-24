@@ -72,7 +72,7 @@ LW_WFDB = "/usr/local/database "
 # DocumentRoot is the web server's top-level directory of (HTML) content.
 # The values below and in your Apache configuration file should match.
 # Note that it does not end with '/'.
-DocumentRoot = /root/physionet/html
+DocumentRoot = /app/physionet/html
 
 # ServerName is the hostname of the web server, as specified in your Apache
 # configuration file.  The default setting below attempts to guess your server's
@@ -90,7 +90,7 @@ ScriptAlias1 = /cgi-bin/
 # ScriptAlias2 is the directory in which server scripts are to be installed.
 # It should match the second argument of the ScriptAlias directive in your
 # Apache configuration file.
-CGIDIR = /root/physionet/cgi-bin/
+CGIDIR = /app/physionet/cgi-bin/
 
 # User is the user who "owns" processes started by the web server.
 # It should match the value of User in your Apache configuration file.
