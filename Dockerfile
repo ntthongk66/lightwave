@@ -17,9 +17,9 @@ RUN apt update && apt install -y libcgi-pm-perl
 RUN apt update && apt install -y locales \
     && locale-gen en_US.UTF-8 \
     && update-locale LANG=en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 
 
@@ -47,7 +47,7 @@ RUN ldconfig
 
 RUN make
 RUN chmod +x /app
-RUN mv database/* /usr/local/database 
+# RUN mv database/* /usr/local/database 
 
 # Expose port 80
 EXPOSE 80
