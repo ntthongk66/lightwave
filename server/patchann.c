@@ -118,20 +118,16 @@ int main(int argc, char **argv) {
     if (annopen(record, &ai, 1) == 0){ /* input annotator opened successfully */
 	while (getann(0, &annot) == 0)  /* read the original annotations */
 	    (void)insert_ann();    /* copy them into the in-memory array */
-	ai.name = oaname;	/* use oaname only if input annotator exists */
+	ai.name = annotator;	/* use oaname only if input annotator exists */
     }
     /* Failure to open the original annotation file is not an error (it simply
        means that the edit log will be used to create an entirely new set of
        annotations).  Failure to open the output is fatal, however. */
     ai.stat = WFDB_WRITE;
-    if (annopen(record, &ai, 1) != 0) {  /* can't open output annotator */
-	fprintf(stderr, "%s: can't write output annotation file '%s.%s\n",
-		record, ai.name);
-	SFREE(oaname);
-	SFREE(record);
-	SFREE(annotator);
-	wfdbquit();
-	exit(2);
+    if (annopen(record, &ai, 1) != 0) {  /* Nếu không mở được file */
+        fprintf(stderr, "Error: Cannot write to annotation file %s.%s\n", record, ai.name);
+        wfdbquit();
+        exit(2);
     }
 
     /* read the edit log and merge it with the in-memory array */
@@ -154,6 +150,9 @@ int main(int argc, char **argv) {
 	annot.time = (ap->t0) >> 16;
 	annot.aux = ap->aux;
 	putann(0, &annot);
+    char backup_filename[256];
+    sprintf(backup_filename, "%s_%s", record, annotator);
+    remove(backup_filename);  // Xóa file backup nếu có
 	ap = ap->next;
 	SFREE(annot.aux);
     }
