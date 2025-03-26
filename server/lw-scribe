@@ -40,7 +40,7 @@ unless ($lwurl) {
     ($lwurl) = ($lwurl =~ m{^(/lw/[-_.\@A-Za-z0-9]{3,32})$});
 }
 my $lwc = CGI::Cookie->new(-name=>'LWURL', -value=>$lwurl, -expires=>'+10d');
-my $wdir = "/ptmp$lwurl";
+my $wdir = "/usr/local/database";
 unless (-d $wdir) {
     make_path($wdir);
 }
@@ -73,7 +73,7 @@ my ($ofile) = (param("file") =~ /^([-a-zA-Z0-9._+]{1,128})$/);
 unless ($fh && defined $ofile) { err404(); } # no file upload, quit
 
 my $data;
-my $dbdir = "$wdir/database";
+my $dbdir = "$wdir";
 my $logdir = "$wdir/logs";
 
 unless (-d $logdir) {
