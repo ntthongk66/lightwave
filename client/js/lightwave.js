@@ -116,9 +116,9 @@ var server,
     $snames,	// signal name click targets
     $svg,       // signal window
 
-// View/edit panel geometry
-    width,	// width of View/edit panel, in pixels
-    height,	// height of View/edit panel, in pixels
+// Xem/Chỉnh sửa panel geometry
+    width,	// width of Xem/Chỉnh sửa panel, in pixels
+    height,	// height of Xem/Chỉnh sửa panel, in pixels
     swl,        // width of left column, in pixels
     sww,	// signal window width, in pixels
     swr,	// width of right column, in pixels
@@ -356,19 +356,19 @@ function show_summary() {
     else { sdt_ticks = 0; }
     rdt_ticks = (adt_ticks > sdt_ticks) ? adt_ticks : sdt_ticks;
     rdurstr = timstr(rdt_ticks);
-    itext += '<h3>Summary</h3>\n<table>\n'
-        + ' <tr><td>Record length</td><td>' + rdurstr + '</td></tr>\n';
+    itext += '<h3>Bản tóm tắt</h3>\n<table>\n'
+        + ' <tr><td>Độ dài bản ghi</td><td>' + rdurstr + '</td></tr>\n';
     if (recinfo.start) {
 	itext += ' <tr><td>Start</td><td>' + recinfo.start + '</td></tr>\n';
     }
-    itext += ' <tr><td>Clock frequency&nbsp;</td><td>' + tickfreq
-	+ ' ticks per second</td></tr>\n';
+    itext += ' <tr><td>Tần số xung nhịp&nbsp;</td><td>' + tickfreq
+	+ ' Hz</td></tr>\n';
 
     if (nann > 0) {
 	for (ia = 0; ia < nann; ia++) {
-	    itext += '<tr><td style="vertical-align: top">Annotator: '
+	    itext += '<tr><td style="vertical-align: top">Chuyển đạo: '
 		+ ann[ia].name + '</td><td>' + '(' + ann[ia].annotation.length
-		+ ' annotations)<br>\n<table style="padding: 0 0 1em 3em">';
+		+ ' nhãn )<br>\n<table style="padding: 0 0 1em 3em">';
 	    s = ann[ia].summary;
 	    for (i = 0; i < s.length; i++) {
 		if (s[i][1] > 0) {
@@ -567,7 +567,7 @@ function slist(t0_string) {
 	    recinfo = data.info;
 	    tickfreq = recinfo.tfreq;
 	    if (tickfreq > 5) {
-		$('#dtsliderunits').html('seconds');
+		$('#dtsliderunits').html('giây');
 		tscl = 1000;
 		if (dt_sec > 60) { dt_sec = 10; }
 		$('#swidth').val(dt_sec);
@@ -633,20 +633,20 @@ function rlist() {
     var i, rlist_text = '';
     url = server + '?action=rlist&db=' + db + server_flags;
     $('#rlname').empty();
-    $('#rlist').html('Reading list of records in ' + sdb);
+    $('#rlist').html('Đang đọc danh sách bản ghi trong ' + sdb);
     $('#rslist').empty();
     show_status(true);
     get_jsonp(url, function(data) {
 	if (data) {
 	    rlist_text = '<select name=\"record\">\n'
-		+ '<option value=\"\" selected>--Choose one--</option>\n';
+		+ '<option value=\"\" selected>--Chọn một bản ghi--</option>\n';
 	    for (i = 0; i < data.record.length; i++) {
 	        rlist_text += '<option value=\"' + data.record[i]
 		    + '\">' + data.record[i] + '</option>\n';
 	    }
 	    rlist_text += '</select>';
 	}
-	$('#rlname').html("Record:");
+	$('#rlname').html("Bản ghi:");
 	$('#rlist').html(rlist_text);
 	// fetch the list of signals when the user selects a record
 	$('[name=record]').on("change", newrec);
@@ -666,7 +666,7 @@ function rslist() {
     get_jsonp(url, function(data) {
 	if (data) {
 	    rslist_text = '<select name=\"subrec\">\n'
-		+ '<option value=\"\" selected>--Choose one--</option>\n';
+		+ '<option value=\"\" selected>--Chọn một cơ sở dữ liệu--</option>\n';
 	    for (i = 0; i < data.record.length; i++) {
 	        rslist_text += '<option value=\"' + data.record[i]
 		    + '\">' + data.record[i] + '</option>\n';
@@ -702,9 +702,9 @@ function dblist() {
     get_jsonp(url, function(data) {
 	clearTimeout(timer);
 	if (data && data.database && data.database.length > 0) {
-	    dblist_text = '<td align=right>Database:</td>' + 
+	    dblist_text = '<td align=right>Cơ sở dữ liệu:</td>' + 
 		'<td colspan=2><select name=\"db\" id=\"db\">\n' +
-		'<option value=\"\" selected>--Choose one--</option>\n';
+		'<option value=\"\" selected>--Chọn một cơ sở dữ liệu--</option>\n';
 	    for (i = 0; i < data.database.length; i++) {
 		dbi = data.database[i].name;
 		dbparts = dbi.split('/');
@@ -983,7 +983,7 @@ function newrec() {
     prompt = 'Reading annotations for ' + sdb + '/' + record;
     $('#prompt').html(prompt);
     read_annotations("0");
-    prompt = 'Click on the <b>View/edit</b> tab to view ' + sdb + '/' + record;
+    prompt = 'Nhấp vào tab <b>Xem/Chỉnh sửa</b> để xem ' + sdb + '/' + record;
     $('#prompt').html(prompt);
     set_sw_width(dt_sec);    
 }
@@ -1004,7 +1004,7 @@ function newsubrec() {
     prompt = 'Reading annotations for ' + sdb + '/' + record;
     $('#prompt').html(prompt);
     read_annotations("0");
-    prompt = 'Click on the <b>View/edit</b> tab to view ' + sdb + '/' + record;
+    prompt = 'Nhấp vào tab <b>Xem/Chỉnh sửa</b> để xem ' + sdb + '/' + record;
     $('#prompt').html(prompt);
     set_sw_width(dt_sec);    
 }
@@ -1039,20 +1039,20 @@ function newdb() {
     show_localstorage();
 }
 
-// Refresh either the View/edit or Tables tab
+// Refresh either the Xem/Chỉnh sửa or Tables tab
 function update_output() {
-    if (current_tab === 'View/edit') { show_plot(); }
+    if (current_tab === 'Xem/Chỉnh sửa') { show_plot(); }
     else if (current_tab === 'Tables') { show_tables(); }
 }
 
-// Refresh the signal window on the View/edit tab
+// Refresh the signal window on the Xem/Chỉnh sửa tab
 function show_plot() {
     var a, downarrow, desc, dy, g, grd, i, imin, imax, ia, is, j, pv, s, sname,
       sva, svgts, svs, t, tf, title, tnext, tps, trace, tst, tt, ttick, txt,
       uparrow, v, x, xstep, xtick, x0q, x0r, x0s, y, ytop, y0, y0s = [], y1,
       y0a = [], z;
     
-    width = $('#plotdata').width();  // total available width in View/edit panel
+    width = $('#plotdata').width();  // total available width in Xem/Chỉnh sửa panel
     swl = Math.round(width*svgl/svgtw);    // left column width
     sww = Math.round(width*svgw/svgtw);   // signal window width
     swr = width - (swl + sww);	     // right column width
@@ -1081,13 +1081,13 @@ function show_plot() {
         + ' stroke-width="' + lwb + '" fill="red" fill-opacity="'
 	+ g_visible + '"/>';
     if (g_visible === 0) {
-	grd += '<title>(click to show grid)</title></g>';
+	grd += '<title>(Nhấp để hiển thị lưới)</title></g>';
     }
     else {
 	x0s = (tscl-Math.floor((t0_ticks % tickfreq)*tscl/tickfreq))%tscl;
 	x0r = x0s%griddx;
 	x0q = Math.floor(x0s/griddx)*griddx;
-	grd += '<title>(click to hide grid)</title></g>'
+	grd += '<title>(Nhấp để ẩn lưới)</title></g>'
 	    + '<path stroke="rgb(200,100,100)" fill="red" stroke-width="' + lwl
 	    + '" d="M' + x0r + ',0 ';
 	uparrow = ' l-' + adx1 + ',' + ady1 + 'l' + adx2 + ',0 l-' + adx1
@@ -1125,10 +1125,10 @@ function show_plot() {
         + ' stroke-width="' + lwb + '" fill="blue" fill-opacity="'
 	+ m_visible + '"/>';
     if (m_visible === 0) {
-	sva += '<title>(click to show marker bars)</title></g>';
+	sva += '<title>(Nhấp để hiển thị thanh đánh dấu)</title></g>';
     }
     else {
-	sva += '<title>(click to hide marker bars)</title></g>';
+	sva += '<title>(Nhấp để ẩn thanh đánh dấu)</title></g>';
     }
     downarrow = ',0 l-' + adx1 + ',-' + ady1 + ' l' + adx2 + ',0 l-' + adx1
 	+ ',' + ady1 + ' V';
@@ -1140,7 +1140,7 @@ function show_plot() {
 	    sva += '<title>' + html_escape(ann[ia].desc);
 	    if (ann[ia].state === 2) {
 		asy0 = y0;
-		sva += ' (click for normal view)</title>';
+		sva += ' (Nhấp để trở về chế độ xem bình thường)</title>';
 		if (editing) {
 		    sva += '<rect x="0" y="' + Number(ytop - svgf)
 			+ '" width="' + svgw + '" height="' + 3*svgf
@@ -1148,7 +1148,7 @@ function show_plot() {
 		}
 	    }
 	    else {
-		sva += ' (click to hide)</title>';
+		sva += ' (Nhấp để ẩn)</title>';
 	    }
 	    sva += '<rect x="-' + svgl + '" y="' + ytop
 		+ '" width="' + svgl + '" height="' + 2*svgf
@@ -1209,7 +1209,7 @@ function show_plot() {
 	}
 	else {
 	    sva += '<title>' + html_escape(ann[ia].desc)
-	    	+ ' (click for highlighted view)</title>'
+	    	+ ' (Nhấp để xem chế độ nổi bật)</title>'
 		+ '<rect x="-' + svgl + '" y="' + ytop
 		+ '" width="' + svgl + '" height="' + 2*svgf
 		+ '" fill="white" />'
@@ -1232,10 +1232,10 @@ function show_plot() {
 	if (trace && s_visible[sname] === 1) {
 	    svs += '<title>' + html_escape(sname);
 	    if (sname === sigselected) {
-		svs += ' (click for normal view)</title>';
+		svs += ' (Nhấp để xem chế độ bình thường)</title>';
 	    }
 	    else {
-		svs += ' (click to hide)</title>';
+		svs += ' (Nhấp để ẩn)</title>';
 	    }
 	    svs += '<rect x="-' + svgl + '" y="' + ytop
 		+ '" width="' + svgl + '" height="' + 2*svgf
@@ -1300,7 +1300,7 @@ function show_plot() {
 	}
 	else {	// signal is hidden, show label only
 	    svs += '<title>' + html_escape(sname)
-		+ ' (click for highlighted view)</title>'
+		+ ' (Nhấp để xem chế độ nổi bật)</title>'
 		+ '<rect x="-' + svgl + '" y="' + ytop
 		+ '" width="' + svgl + '" height="' + 2*svgf
 		+ '" fill="white" />'
@@ -1715,7 +1715,7 @@ function scrollfwd() {
     }
 }
 
-// Stop autoplay in the View/edit window and reset the autoplay button labels
+// Stop autoplay in the Xem/Chỉnh sửa window and reset the autoplay button labels
 function autoplay_off() {
     if (autoscroll) {
 	clearInterval(autoscroll);
@@ -1827,16 +1827,16 @@ function match(sa, i) {
 }
 
 //-----------------------------------------------------------------------------
-// View/edit and Tables navigation button handlers
+// Xem/Chỉnh sửa and Tables navigation button handlers
 
 // Move so that the signal window begins at the "Go to:" position
 function go_to() {
     var t_ticks,  t0_string;
 
-    if (current_tab === 'View/edit') {
+    if (current_tab === 'Xem/Chỉnh sửa') {
 	t0_string = $('#view .t0_str').val();
     }
-    else if (current_tab === 'Tables') {
+    else if (current_tab === 'Bảng') {
 	t0_string = $('#tables .t0_str').val();
     }
     $('.t0_str').val(t0_string);
@@ -1950,15 +1950,15 @@ function srev() {
 function find() {
     var content = '', i, ia;
 
-    if (nann <= 0) { alert('No annotations to search!'); }
+    if (nann <= 0) { alert('Không có nhãn để tìm kiếm!'); }
     for (ia = 0; ia < nann; ia++) {
 	if (ann[ia].state === 2) { break; }
     }
     if (ia >= nann) {
-	alert('No annotations have been chosen for searching!\n\n'
-	      + 'Choose an annotation set to search by\n'
-	      + 'clicking on its name (to the left of the\n'
-	      + 'signal window) until it is highlighted.');
+	alert("Không có nhãn nào được chọn để tìm kiếm!\n\n"
+	+"Chọn một bộ nhãn để tìm kiếm bằng cách\n"
+	+"nhấp vào tên của nó (bên trái cửa sổ tín hiệu)\n"
+	+"cho đến khi nó được đánh dấu.");
     }
     else if ($('#findbox').dialog("isOpen")) { $('#findbox').dialog("close"); }
     else {
@@ -2329,12 +2329,12 @@ function toggle_insert_mode() {
     if (insert_mode) {
 	insert_mode = false;
 	$('#insert_mode').css("color", "white").css("background-color", "red")
-	    .attr("title", "click to return to insert mode");
+	    .attr("title", "Nhấp để quay lại chế độ chèn");
     }
     else {
 	insert_mode = true;
 	$('#insert_mode').css("color", "red").css("background-color", "white")
-	    .attr("title", "click to enter delete mode");
+	    .attr("title", "Nhấp để vào chế độ xóa");
     }
 }
 // Handle clicks on annotation type buttons in annotation palette
@@ -2523,9 +2523,9 @@ function mark(e) {
 	edlog(asel, '-');	// delete the selected annotation
     }
     else {			// can't delete -- no selection
-	alert("Select an annotation to delete it,\n"
-	      + "or click on the red button in the\n"
-	      + "palette to return to insert mode.\n");
+	alert("Chọn một nhãn để xóa,\n"
+	      + "hoặc nhấp vào nút đỏ trong\n"
+	      + "bảng nhãn để quay lại chế độ chèn.\n");
 	return;
     }
     update_output();
@@ -2729,7 +2729,7 @@ function handle_editmode() {
 	$('.editgroup').show();
     }
 
-    if (db !== '' && record !== '') {  // return to View/edit tab if record open
+    if (db !== '' && record !== '') {  // return to Xem/Chỉnh sửa tab if record open
 	$('#tabs').tabs("option", "active", $('#view').index());
 	show_plot();
     }
@@ -2803,10 +2803,10 @@ function new_annset() {
 function toggle_show_edits() {
     $('#editlog').toggle();
     if ($('#editlog').is(":hidden")) {
-	$('#show_edits').html("Show pending edit log");
+	$('#show_edits').html("Hiển thị nhật ký chỉnh sửa đang chờ xử lý");
     }
     else {
-	$('#show_edits').html("Hide pending edit log");
+	$('#show_edits').html("Ẩn nhật ký chỉnh sửa đang chờ xử lý");
     }
 }
 
@@ -2814,10 +2814,10 @@ function toggle_show_edits() {
 function toggle_show_status() {
     $('#status').toggle();
     if ($('#status').is(":hidden")) {
-	$('#show_status').html("Show status");
+	$('#show_status').html("Hiển thị trạng thái");
     }
     else {
-	$('#show_status').html("Hide status");
+	$('#show_status').html("Ẩn trạng thái");
     }
 }
 
@@ -2825,10 +2825,10 @@ function toggle_show_status() {
 function toggle_show_requests() {
     $('#requests').toggle();
     if ($('#requests').is(":hidden")) {
-	$('#show_requests').html("Show request log");
+	$('#show_requests').html("Hiển thị nhật ký yêu cầu");
     }
     else {
-	$('#show_requests').html("Hide request log");
+	$('#show_requests').html("Ẩn nhật ký yêu cầu");
     }
 }
 
@@ -2876,13 +2876,13 @@ function set_handlers() {
 	}
     });
 
-    // Add touch handlers for View/edit tab if on iPad or other touch device.
+    // Add touch handlers for Xem/Chỉnh sửa tab if on iPad or other touch device.
     if ($.support.touch) {
 	$('#view').addTouch();  // see jquery.ui.touch-lw.js
     }
 
     // Handlers for buttons and other controls:
-    //  on View/edit and Tables tabs:
+    //  on Xem/Chỉnh sửa and Tables tabs:
     $('.go_to').on("click", go_to);      // go to selected location
 
     $('.sor').on("click", gostart);	 // go to start of record
@@ -2913,7 +2913,7 @@ function set_handlers() {
     $('#mark').on("click", mark);    // complete the pending edit
     $('#redo').on("click", redo);    // reapply most recent edit
 
-    // Signal window duration slider on View/edit tab
+    // Signal window duration slider on Xem/Chỉnh sửa tab
     $(function() {
 	$('#dtslider').slider({ value: dt_sec, min: 0, max: 60, step: 5,
 	    slide: function(event, ui) {
@@ -3028,7 +3028,7 @@ function parse_url() {
 	    document.title = title;
 	    $('#tabs').tabs({disabled:[1,2]});  // disable View and Tables tabs
 	    $('#top').show();
-	    dblist_text = '<td align=right>Database:</td><td>' + db + '</td>';
+	    dblist_text = '<td align=right>Cơ sở dữ liệu:</td><td>' + db + '</td>';
 	    $('#dblist').html(dblist_text);
 	    alist();
 	    rlist();
@@ -3043,10 +3043,10 @@ function parse_url() {
 	    title = 'LW: ' + sdb + '/' + record;
 	    document.title = title;
 	    $('.t0_str').val(t0_string);
-	    current_tab = 'View/edit';
+	    current_tab = 'Xem/Chỉnh sửa';
 	    help_main = 'followed-link.html';
 	    $('.recann').html(sdb + '/' + record);
-	    dblist =  '<td align=right>Database:</td><td>' + db + '</td>';
+	    dblist =  '<td align=right>Cơ sở dữ liệu:</td><td>' + db + '</td>';
 	    $('#server').html(server);
 	    $('#scribe').html(scribe);
 	    $('#dblist').html(dblist);

@@ -45,11 +45,11 @@ provides some of the functions of LightWAVE without Javascript.
 <div class="js">
 <div id="tabs">
 <ul>
-<li><a href="#choose">Choose input</a></li>
-<li><a href="#view">View/edit</a></li>
-<li><a href="#tables">Tables</a></li>
-<li><a href="#settings">Settings</a></li>
-<li><a href="#help">Help</a></li>
+<li><a href="#choose">Chọn đầu vào</a></li>
+<li><a href="#view">Xem/Chỉnh sửa</a></li>
+<li><a href="#tables">Bảng</a></li>
+<li><a href="#settings">Cài đặt</a></li>
+<li><a href="#help">Trợ giúp</a></li>
 </ul>
 
 <form id="lwform">
@@ -65,7 +65,7 @@ provides some of the functions of LightWAVE without Javascript.
   </tr>
 
   <tr><td colspan=2 align="center" id="prompt">
-     First visit? Click on the <b>Help</b> tab above.</td></tr>
+    Lần đầu truy cập? Nhấp vào tab <b>Trợ giúp</b> ở trên.</td></tr>
  </table>
 </div>
 
@@ -74,35 +74,34 @@ provides some of the functions of LightWAVE without Javascript.
 <div id="view">
  <table width="100%">
   <tr>
-    <td width="25%"><div style="font-size: 14px; text-align: center">Go to:
+    <td width="25%"><div style="font-size: 14px; text-align: center">Đi tới:
       <input type="text" name="t0" class="t0_str" value="" tabindex="1"
-	     title="Enter the elapsed time from the start of the
-record to the start of the window, then click '&#x21b4;'"
+	     title="Nhập thời gian đã trôi qua từ khi bắt đầu bản ghi đến khi bắt đầu cửa sổ, sau đó nhấp chuột '&#x21b4;'"
 	     placeholder="HH:MM:SS" size="10">
       <button class="go_to" tabindex="2"
-		    title="refresh signal window">&#x21b4;</button></div>
+		    title="Làm mới cửa sổ tín hiệu">&#x21b4;</button></div>
     </td>
 
     <td width="50%"><div style="font-size: 14px; text-align: center">
       <button class="sor" tabindex="8"
-		    title="start of record">|&#9665;</button>
+		    title="Đến điểm bắt đầu bản ghi">|&#9665;</button>
       <button class="rev" tabindex="4"
-		    title="previous window">&#9665;</button>
+		    title="Cửa sổ trước">&#9665;</button>
       <button class="scrollrev" tabindex="4"
-		    title="start/stop scrolling (reverse)">&#9664;</button>
+		    title="bắt đầu/dừng phát bản ghi (ngược lại)">&#9664;</button>
       <button class="scrollfwd" tabindex="4"
-		    title="start/stop scrolling (forward)">&#9654;</button>
+		    title="bắt đầu/dừng phát bản ghi (tiến lên)">&#9654;</button>
       <button class="fwd" tabindex="3"
-		    title="next window">&#9655;</button>
+		    title="Cửa sổ kế tiếp">&#9655;</button>
       <button class="eor" tabindex="7"
-		    title="end of record">&#9655;|</button>
+		    title="Đến điểm kết thúc bản ghi">&#9655;|</button>
       <br>
       <button class="srev" tabindex="5"
-	   title="search for previous 'Find' target">&#9665; Search</button>
+	   title="tìm kiếm mục tiêu 'Tìm' trước đó">&#9665; Search</button>
       <button class="find" tabindex="9"
-		    title="define search target">Find...</button>
+		    title="xác định mục tiêu tìm kiếm">Find...</button>
       <button class="sfwd" tabindex="6"
-		   title="search for next 'Find' target">Search &#9655;</button>
+		   title="tìm kiếm mục tiêu 'Tìm' tiếp theo">Search &#9655;</button>
       </div>
     </td>
     </span>
@@ -113,12 +112,12 @@ record to the start of the window, then click '&#x21b4;'"
 
  <div id="findbox" title="Find...">
  <table width="100%">
- <tr><td align="center" title="Enter an annotation mnemonic (N, V, S, ...)
-or an 'aux' string, or one of:
-  *v	to match any ventricular ectopic beat
-  *s	to match any supraventricular ectopic beat
-  *n	to match any other beat type
-  *	to match any annotation or marker">Search&nbsp;for:&nbsp;<input
+ <tr><td align="center" title="Nhập một ký hiệu gán nhãn (N, V, S, ...)
+hoặc một chuỗi 'aux', hoặc một trong các tùy chọn sau:
+*v để khớp với bất kỳ nhịp ngoại tâm thu thất nào
+*s để khớp với bất kỳ nhịp ngoại tâm thu trên thất nào
+*n để khớp với bất kỳ loại nhịp khác
+*để khớp với bất kỳ nhãn hoặc dấu hiệu nào">Search&nbsp;for:&nbsp;<input
   type="text" name="target" id="target" value="" size="4"></td></tr>
  <tr><td id="annsets" align="center">&nbsp;</td></tr>
  <tr><td align="center">
@@ -127,7 +126,7 @@ or an 'aux' string, or one of:
  </td></tr></table>
  </div>
 
- <div id="add_typebox" title="Add a new type to the palette">
+ <div id="add_typebox" title="Thêm một loại nhãn mới">
  <table width="100%">
  <tr title='Choose the primary annotation type.  If the desired
 choice is not in the list, choose " (comment) and
@@ -148,7 +147,7 @@ enter the type as an Aux string.'>
      <option value="r">r (R-on-T premature ventricular contraction)</option>
      <option value="F">F (fusion of V and N)</option>
      <option value="e">e (atrial escape beat)</option>
-     <option value="j">j (junctional escape beat</option>
+     <option value="j">j (junctional escape beat)</option>
      <option value="n">n (supraventricular escape beat [e or j])</option>
      <option value="E">E (ventricular escape beat)</option>
      <option value="/">/ (paced beat)</option>
@@ -171,26 +170,26 @@ enter the type as an Aux string.'>
      </select>
     </td>
  </tr>
- <tr title='New rhythm, comment, etc.
-Use annotation type "+" to mark a rhythm change. 
-Standard aux strings for rhythms begin with "(":
+ <tr title='Nhịp tim mới, ghi chú, v.v.
+Sử dụng loại nhãn "+" để đánh dấu sự thay đổi nhịp tim.
+Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
 
- (AB     atrial bigeminy
- (AFIB   atrial fibrillation
- (AFL    atrial flutter
- (B        ventricular bigeminy
- (BII      second-degree heart block
- (IVR     idioventricular rhythm
- (N       normal sinus rhythm
- (NOD   nodal (A-V junctional) rhythm
- (P        paced rhythm
- (PREX  pre-excitation (WPW)
- (SBR   sinus bradycardia
- (SVTA  supraventricular tachyarrhythmia
- (T        ventricular trigeminy
- (VFIB   ventricular fibrillation
- (VFL    ventricular flutter
- (VT     ventricular tachycardia'>
+(AB Ngoại tâm thu nhĩ nhịp đôi
+(AFIB Rung nhĩ
+(AFL Cuồng nhĩ
+(B Ngoại tâm thu thất nhịp đôi
+(BII Block nhĩ thất cấp độ 2
+(IVR Nhịp tự động thất
+(N Nhịp xoang bình thường
+(NOD Nhịp nút nhĩ thất
+(P Nhịp tạo nhịp nhân tạo
+(PREX Hội chứng kích thích sớm (WPW)
+(SBR Nhịp chậm xoang
+(SVTA Nhịp nhanh trên thất
+(T Ngoại tâm thu thất nhịp ba
+(VFIB Rung thất
+(VFL Cuồng thất
+(VT Nhịp nhanh thất'>
    <td align="right">Aux&nbsp;string:&nbsp;</td>
    <td align="left"><input type="text" name="editx" id="editx" value=""></td>
  </tr>
@@ -226,57 +225,56 @@ Standard aux strings for rhythms begin with "(":
   <tr>
     <td align=left width="25%"><div style="font-size: 14px">
 	<button class="stretch"
-		title="enlarge the highlighted signal">&#9650;</button>
+		title="Phóng to tín hiệu được đánh dấu">&#9650;</button>
 	<button class="reset"
-		title="reset the highlighted signal">=</button>
+		title="Đặt lại tín hiệu được đánh dấu">=</button>
 	<button class="shrink"
-		title="reduce the highlighted signal">&#9660;</button>
+		title="Thu nhỏ tín hiệu được đánh dấu">&#9660;</button>
     </td>
 
    <td align=right width="25%" class="editgroup" style="font-size: 14px">
-      <table title="Annotation palette"
+      <table title="Bảng nhãn"
 	   style="text-align: center; vertical-align: middle;
 		  border: 1px dotted gray; padding: 2px">
 	<tr>
 	  <td width="30%" style="text-align: center; vertical-align: middle">
 	    <span>
 	      <button style="background: #8d8" id="add_type"
-		      title="add a new type to the palette"><b>+</b></button>
-	      <button title="copy the selection to the palette" id="copyann"
+		      title="Thêm một loại mới vào bảng nhãn"><b>+</b></button>
+	      <button title="Sao chép mục đã chọn vào bảng nhãn" id="copyann"
 		      style="background: #8d8">&#x21b3;</button>
 	    </span>
 	    <button style="color: red; background-color: white"
-		    id="insert_mode" title="set delete mode (click any other
-button in this group for insert mode)">&#9003;</button>
+		    id="insert_mode" title="Đặt chế độ xóa (nhấp vào bất kỳ nút nào khác trong nhóm này để chuyển sang chế độ chèn)">&#9003;</button>
 	  </td>
 	  <td style="text-align: right; vertical-align: middle" id="palette">
-	    Loading annotation palette...
+	    Đang tải bảng nhãn...
 	</td></tr>
       </table>
     </td>
 
     <td align=left width="25%" class="editgroup" style="font-size: 14px">
       <div style="text-align: center; vertical-align: middle">
-	<button title="select the annotation to the left of the edit point"
+	<button title="Chọn nhãn ở bên trái điểm chỉnh sửa"
 		id="jumpleft">&#8676;</button>
-	<button title="move the edit point to the left"
+	<button title="Di chuyển điểm chỉnh sửa sang trái"
 		id="nudgeleft">&#8612;</button>
-	<button title="move the edit point to the right"
+	<button title="Di chuyển điểm chỉnh sửa sang phải"
 		id="nudgeright">&#8614;</button>
-	<button title="select the annotation to the right of the edit point"
+	<button title="Chọn nhãn ở bên phải điểm chỉnh sửa"
 		id="jumpright">&#8677;</button><br>
-	<button title="restore state before most recent edit"
+	<button title="Khôi phục trạng thái trước chỉnh sửa gần nhất"
 		id="undo">Undo</button>
-	<button id="mark" title="complete pending edit">Mark</button>
-	<button id="redo" title="reapply last edit">Redo</button>
+	<button id="mark" title="Hoàn tất chỉnh sửa đang chờ xử lý">Mark</button>
+	<button id="redo" title="Áp dụng lại chỉnh sửa gần nhất">Redo</button>
       </div>
     </td>
 
     <td align=right width="25%">
       <div style="font-size: 10px;">
-	<label for="dtslider">Window duration:</label>
+	<label for="dtslider">Thời lượng cửa sổ bản ghi:</label>
 	<input type="text" id="swidth" value="10"
-	       style="border: 0; width: 2em; font-weight: bold"/><span id="dtsliderunits">seconds</span>
+	       style="border: 0; width: 2em; font-weight: bold"/><span id="dtsliderunits">giây</span>
       </div>
       <div id="dtslider"></div>
     </td>
@@ -289,17 +287,15 @@ button in this group for insert mode)">&#9003;</button>
 <div id="tables">
  <table width="100%">
   <tr><td align=left>
-      <div style="font-size: 14px; text-align: center">Go to:
+      <div style="font-size: 14px; text-align: center">Đi tới:
       <input type="text" name="t0" class="t0_str" value="" tabindex="1"
-	     title="Enter the elapsed time from the start of the
-record to the start of the window, then click '&#x21b4;'"
+	     title="Nhập thời gian đã trôi qua từ khi bắt đầu bản ghi đến khi bắt đầu cửa sổ, sau đó nhấp chuột '&#x21b4;'"
 	     placeholder="HH:MM:SS" size="10">
       <button class="go_to" tabindex="2"
-	  title="show annotations/signals from the
-signal window if selected below">&#x21b4;</button>
+	  title="Hiển thị nhãn/tín hiệu từ cửa sổ tín hiệu nếu được chọn bên dưới">&#x21b4;</button>
       <br>
-      <input type="checkbox" id="viewann" />View annotations as text&nbsp;&nbsp;
-      <input type="checkbox" id="viewsig" />View signals as text
+      <input type="checkbox" id="viewann" />Xem nhãn dưới dạng văn bản&nbsp;&nbsp;
+      <input type="checkbox" id="viewsig" />Xem tín hiệu dưới dạng văn bản
     </div></td>
 
     <td><div style="font-size: 14px; text-align: center">
@@ -357,16 +353,16 @@ signal window if selected below">&#x21b4;</button>
   </tr>
  </table>
 
- <h3>Editing</h3>
+ <h3>Chỉnh sửa</h3>
  <table>
   <tr><td>
       <div id="edit_mode">
 	<input type="radio" id="no_edit" name="edit_mode" checked="checked">
-	  <label for="no_edit">View (no editing)</label>
+	  <label for="no_edit">Chỉ xem (không chỉnh sửa)</label>
 	<input type="radio" id="mouse_edit" name="edit_mode">
-	  <label for="mouse_edit">Edit using mouse</label>
+	  <label for="mouse_edit">Chỉnh sửa bằng chuột</label>
 	<input type="radio" id="touch_edit" name="edit_mode">
-	  <label for="touch_edit">Edit using touch</label>
+	  <label for="touch_edit">Chỉnh sửa bằng cách chạm</label>
       </div>
   </td></tr>
 </table>
@@ -375,23 +371,23 @@ signal window if selected below">&#x21b4;</button>
 <table width="100%">
   <tr>
     <td width="50%">
-	<button id="new_annset">Set up new annotation set</button>
+	<button id="new_annset">Thiết lập bộ nhãn mới</button>
 	<br>
-	<button title="Display the current edit log, most recent first"
-		id="show_edits">Show pending edit log</button>
+	<button title="Hiển thị nhật ký chỉnh sửa hiện tại, mới nhất trước"
+		id="show_edits">Hiển thị nhật ký chỉnh sửa đang chờ xử lý</button>
 	<br><br>
-	<button title="Back up the current edit log"
-		id="sync_edits">Save pending edits</button>
+	<button title="Sao lưu nhật ký chỉnh sửa hiện tại"
+		id="sync_edits">Lưu các chỉnh sửa</button>
     </td>
     <td align="right" width="45%">
-      <button title="Display counters of total and pending requests"
-	      id="show_status">Show status</button>
+      <button title="Hiển thị bộ đếm của tổng số yêu cầu và yêu cầu đang chờ xử lý"
+	      id="show_status">Hiển thị trạng thái</button>
       <br>
-      <button title="Display the request log, most recent first"
-	      id="show_requests">Show request log</button>
+      <button title="Hiển thị nhật ký yêu cầu, mới nhất trước"
+	      id="show_requests">Hiển thị nhật ký yêu cầu</button>
       <br><br>
-      <button title="Clear the request log and counters"
-	      id="clear_requests">Reset request log</button>
+      <button title="Xóa nhật ký yêu cầu và bộ đếm"
+	      id="clear_requests">Đặt lại nhật ký yêu cầu</button>
     </td>
   </tr>
   <tr><td><div id="syncnote"></div></td>
@@ -405,11 +401,10 @@ signal window if selected below">&#x21b4;</button>
 
  <table width="100%">
   <tr><td align="left">
-   <button id="help_about" title="About LightWAVE: what it is, getting started,
-and links to more information">Main help</button>
-   <button id="help_topics" title="Topic index">Help topics</button>
+   <button id="help_about" title="Giới thiệu về LightWAVE: tổng quan, hướng dẫn bắt đầu và các liên kết để tìm hiểu thêm">Main help</button>
+   <button id="help_topics" title="Mục lục chủ đề">Help topics</button>
    <button id="help_contacts"
-   title="Contacts for feature requests and bug reports">Contacts</button></td>
+   title="">Contacts</button></td>
    <td align="right"><div class="recann"></div></td>
   </tr>
  </table>
