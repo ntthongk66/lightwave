@@ -7,129 +7,61 @@
 <link rel="stylesheet" href="../css/lightwave.css">
 </head>
 
-<h2>Editing annotations with LightWAVE</h2>
+<h2>Chỉnh sửa nhãn với LightWAVE</h2>
 
 <p>
-LightWAVE allows you to create new sets of annotations, either from scratch or
-by copying and modifying an existing set of annotations.
+LightWAVE cho phép bạn tạo các bộ nhãn mới,  
+dù là từ đầu hoặc bằng cách sao chép và chỉnh sửa một bộ nhãn có sẵn.
 
 <p>
-Simplifying the process of contributing annotations to PhysioBank and to
-PhysioNetWorks projects is a major motivation for the development of LightWAVE.
-We welcome contributions of corrected and supplementary annotations for
-PhysioBank's data collections (databases).  We review all such contributions
-before posting them, with acknowledgement to their contributors.  Similarly,
-many owners of PhysioNetWorks projects encourage such contributions to their
-projects.
+Đơn giản hóa quy trình đóng góp nhãn cho PhysioBank và các dự án PhysioNetWorks  
+là một trong những động lực chính cho sự phát triển của LightWAVE.  
+Chúng tôi hoan nghênh các đóng góp về nhãn đã được chỉnh sửa và bổ sung  
+cho các bộ dữ liệu (cơ sở dữ liệu) của PhysioBank.  
+Tất cả các đóng góp này sẽ được xem xét trước khi được đăng tải,  
+và chúng tôi sẽ ghi nhận công lao của người đóng góp.  
+Tương tự, nhiều chủ sở hữu dự án trên PhysioNetWorks cũng khuyến khích  
+các đóng góp như vậy cho dự án của họ.
 
-<div style="background-color: #ffb; border: 1px dotted gray; padding: 5px;">
-<p align="center"><b>Cookies, local storage, and backups</b></p>
-<p>
-Unless you enable editing, LightWAVE does not save any information on your
-computer.
+
+<h3>Bật chế độ chỉnh sửa</h3>
 
 <p>
-If you edit annotations, LightWAVE saves information on your computer in order
-to retain your annotation edits across sessions.  For each annotation file that
-you have edited, your edits are saved (until you delete them manually) in an
-HTML5 local storage string with a key of the form
-<b>LightWAVE-editlog|</b><em>record</em><b>|</b><em>annotator</em>.  HTML5
-local storage is not intended to be readable by any software other than the
-web browser that created it;  the difficulty of doing so depends on the
-browser's implementation of HTML5 local storage.
-
-<p>
-If you use the <button>Save pending edits</button> button, the LightWAVE scribe
-copies the edits for the currently open annotation file from local storage to
-the LightWAVE host, and it sets a cookie (<b>LWURL</b>) that specifies the URL
-on the LightWAVE host where your edits have been backed up.  If you use the
-public PhysioNet-hosted LightWAVE scribe, your edits are backed up to an
-unpublished private URL; although the URL is difficult to guess, this storage is
-not secure.  If you use the PhysioNetWorks-hosted LightWAVE scribe, your edits
-are backed up to your personal workspace on PhysioNetWorks.
-</div>
-
-<p>
-<b>Before starting to edit, launch LightWAVE from the server on which you will
-save your edits.</b>  
-
-<p>
-Edit annotations using the
-<a href="https://physionet.org/users/shared/lightwave/">PhysioNetWorks-hosted
-LightWAVE client</a> if you wish to back up your edits securely in your
-PhysioNetWorks workspace (and share them if you wish).  Use this version of
-LightWAVE to edit your own previously uploaded PhysioBank-compatible records.
-(If you don't have an account, you can
-<a href="https://physionet.org/users/">create one</a> in a minute or two -- it's
-free.)
-
-<p>
-If you need to use a custom LightWAVE client, upload it to your PhysioNetWorks
-workspace and launch it from there.  PhysioNetWorks projects can also host
-custom LightWAVE clients for the use of project members.
-
-<p>
-Alternatively, you can edit existing PhysioBank records anonymously by
-launching <a href="http://physionet.org/lightwave/">PhysioNet's public LightWAVE
-client</a>.  Using this service, you can save your edits temporarily on
-PhysioNet for up to 10 days, and download them to your computer for
-permanent storage at your convenience.
-
-<p>
-Note that there is currently no support for saving annotations created using
-local copies of LightWAVE (copies launched from file:// URLs).  If you install
-your own LightWAVE server and scribe, you will be able to save edits made using
-LightWAVE clients launched from your web server.
-
-<h3>Enabling editing</h3>
-
-<p>
-To avoid unintended edits, annotation editing is disabled by default.  To enable
-editing:
+Để tránh chỉnh sửa ngoài ý muốn, chế độ chỉnh sửa nhãn bị tắt theo mặc định.  
+Để bật chỉnh sửa:
+</p>
 
 <ol>
-<li> From the <b>Choose input</b> tab, select a database and a record.
-<li> Open the <b>Settings</b> tab.
-<li> [Optional] If you wish to create a new set of annotations from scratch rather than
-editing an existing set, click <button>Set up new annotation set</button>.
-(This is unnecessary if the open record is unannotated.)
-<li> Choose <button>Edit using mouse</button> if you use a mouse or trackball,
-or <button>Edit using touch</button> if you use a touch device (iPad or other
-tablet, or smart phone). The <b>View/Edit</b> tab opens automatically.
+<li> Từ tab <b>Chọn đầu vào</b>, chọn một cơ sở dữ liệu và một bản ghi.</li>
+<li> Mở tab <b>Cài đặt</b>.</li>
+<li> [Tùy chọn] Nếu bạn muốn tạo một bộ nhãn mới từ đầu thay vì chỉnh sửa  
+bộ nhãn hiện có, nhấp vào <button>Thiết lập bộ nhãn mới</button>.  
+(Điều này không cần thiết nếu bản ghi đang mở chưa có nhãn.)</li>
+<li> Chọn <button>Chỉnh sửa bằng chuột</button> nếu bạn sử dụng chuột hoặc trackball,  
+hoặc <button>Chỉnh sửa bằng cách chạm</button> nếu bạn sử dụng thiết bị cảm ứng  
+(iPad, máy tính bảng hoặc điện thoại thông minh).  
+Tab <b>Xem/Chỉnh sửa</b> sẽ tự động mở.</li>
 </ol>
 
-<h3>Choosing a set of annotations to edit</h3>
+<h3>Chọn bộ nhãn để chỉnh sửa</h3>
 
 <p>
-The names of the available annotation sets appear in blue to the left of the
-signal window, and the set that is currently open for editing is highlighted.
-If there are two or more sets, the set nearest the top is open initially; this
-will be the new set if there is one.  To choose a different set, click on or
-next to its name at the left of the signal window, until it is highlighted.
-(Clicking on the name repeatedly cycles between normal, highlighted, and hidden
-modes.)
+Tên của các bộ nhãn có sẵn sẽ xuất hiện màu xanh ở bên trái cửa sổ tín hiệu,  
+và bộ nhãn hiện đang mở để chỉnh sửa sẽ được làm nổi bật.  
+Nếu có từ hai bộ nhãn trở lên, bộ nhãn gần phía trên cùng sẽ được mở trước;  
+đây sẽ là bộ nhãn mới nếu có.  
+Để chọn một bộ nhãn khác, hãy nhấp vào hoặc gần tên của bộ nhãn đó  
+ở bên trái cửa sổ tín hiệu, cho đến khi nó được làm nổi bật.  
+(Nhấp liên tục vào tên sẽ chuyển đổi giữa ba chế độ: bình thường, nổi bật và ẩn.)
+
+
+
+<h3>Điều khiển chỉnh sửa</h3>
 
 <p>
-If you reopen a record that you edited in a previous session using the same
-computer and browser, your previous edits will be loaded.  The current version
-of LightWAVE does not include a method for disabling this feature.  You can view
-the original annotations (without your edits) by using a different browser.
-You can delete your edits by using your browser's controls for clearing local
-storage, but be certain that you wish to clear <b>all</b> local storage
-associated with the LightWAVE host before using such a feature.  Another way
-to do this is to use <button>Undo</button> (see below) to delete your changes
-one at a time.
+Khi chế độ chỉnh sửa được bật, hai nhóm điều khiển chỉnh sửa sẽ xuất hiện  
+trong tab <b>Xem/Chỉnh sửa</b>, nằm ở giữa phía dưới cửa sổ tín hiệu:
 
-<p>
-During your editing session, you may switch between annotation sets as often as
-you wish.  Whenever you do so, the edits for the previously open annotation set
-are saved in the browser's local storage automatically.
-
-<h3>Editing controls</h3>
-
-<p>
-When editing is enabled, two clusters of editing controls appear on the
-<b>View/edit</b> tab, centered below the signal window:
 
  <table align=center width="50%">
   <tr>
@@ -179,201 +111,191 @@ button in this group for insert mode)">&#9003;</button>
   </tr>
  </table>
 
-<p> The group of buttons at the left is the <b>annotation palette</b>, used to
-choose which type of annotation to insert.  Its contents will vary depending on
-the types of annotations in the currently open annotation set.  In the example
-above, the V annotation has been highlighted (selected).
+ <p> Nhóm các nút bên trái là <b>bảng nhãn</b>, được sử dụng để chọn loại nhãn cần chèn. 
+Nội dung của bảng này sẽ thay đổi tùy theo các loại nhãn có trong tập nhãn hiện tại. 
+Trong ví dụ trên, nhãn V đã được làm nổi bật (được chọn). </p>
 
-<p> The cluster at the right includes buttons for selecting annotations
-(<button>&#8676;</button> and <button>&#8677;</button>), for fine control of the
-edit marker position (<button>&#8612;</button> and <button>&#8614;</button>),
-for marking a location or a selected annotation (<button>Mark</button>), and for
-reversing the effect of the last mark (<button>Undo</button>) or restoring it
-(<button>Redo</button>).
+<p> Nhóm nút bên phải bao gồm các nút để chọn nhãn 
+(<button>&#8676;</button> và <button>&#8677;</button>), 
+để kiểm soát chính xác vị trí của điểm chỉnh sửa 
+(<button>&#8612;</button> và <button>&#8614;</button>), 
+để đánh dấu một vị trí hoặc một nhãn đã chọn (<button>Mark</button>), 
+và để hoàn tác (<button>Undo</button>) hoặc khôi phục thao tác đánh dấu gần nhất (<button>Redo</button>).
 
-<h3>The edit marker bar</h3>
+<h3>Thanh đánh dấu chỉnh sửa</h3>
 
-<p> When editing is enabled, the <em>edit marker bar</em> is usually visible
-in the signal window.  The green bar runs vertically across the window, and open
-triangles appear at its ends.  Above the signal window at the right, below the
-name of the currently open record, the time interval from the beginning of the
-record to the position of the bar appears in HH:MM:SS format.
+<p> Khi chế độ chỉnh sửa được bật, <em>thanh đánh dấu chỉnh sửa</em> thường hiển thị trong cửa sổ tín hiệu. 
+Thanh màu xanh lá cây chạy dọc theo cửa sổ, với các tam giác mở xuất hiện ở hai đầu. 
+Phía trên bên phải cửa sổ tín hiệu, bên dưới tên của bản ghi hiện đang mở, khoảng thời gian từ đầu bản ghi đến vị trí của thanh sẽ hiển thị theo định dạng HH:MM:SS.
 
-<p> The edit marker bar generally indicates the location where an edit will be
-made.
+<p> Thanh đánh dấu chỉnh sửa thường cho biết vị trí nơi chỉnh sửa sẽ được thực hiện. 
 
-<h3>Types of edits</h3>
 
-<p>
-There are four basic types of edits, each of which requires actions described
-below:
+<h3>Các loại chỉnh sửa</h3>
+
+<p> Có bốn loại chỉnh sửa cơ bản, mỗi loại yêu cầu các thao tác được mô tả bên dưới:</p>
 
 <dl>
-<dt><b>Inserting a new annotation</b></dt>
+<dt><b>Chèn nhãn mới</b></dt>
 <dd>
 <ol>
-<li> Select an annotation type from the palette.
-<li> Move the edit marker bar to the desired location.
-<li> Mark the location.
+<li> Chọn một loại nhãn từ bảng nhãn. </li>
+<li> Di chuyển thanh đánh dấu chỉnh sửa đến vị trí mong muốn. </li>
+<li> Đánh dấu vị trí. </li>
 </ol>
-Repeat steps 2 and 3 to insert additional annotations of the same type.
+Lặp lại bước 2 và 3 để chèn thêm các nhãn cùng loại.
 <p>
 </dd>
 
-<dt><b>Modifying an existing annotation without repositioning it</b></dt>
+<dt><b>Chỉnh sửa nhãn hiện có mà không thay đổi vị trí</b></dt>
 <dd>
 <ol>
-<li> Select an annotation type from the palette.
-<li> Select the annotation to be modified.
-<li> Mark the annotation.
+<li> Chọn một loại nhãn từ bảng nhãn. </li>
+<li> Chọn nhãn cần chỉnh sửa. </li>
+<li> Đánh dấu nhãn. </li>
 </ol>
-Repeat steps 2 and 3 to modify additional annotations in the same way.
+Lặp lại bước 2 và 3 để chỉnh sửa thêm các nhãn theo cùng cách.
 <p>
 </dd>
 
-<dt><b>Deleting an existing annotation</b></dt>
+<dt><b>Xóa nhãn hiện có</b></dt>
 <dd>
 <ol>
-<li> Select <button style="color: red">&#9003;</button> from the palette.
-(It changes to <button style="color: white; background: red">&#9003;</button>
-when selected.)
-<li> Select the annotation to be deleted.
-<li> Mark the annotation.
+<li> Chọn <button style="color: red">&#9003;</button> từ bảng nhãn. 
+(Khi được chọn, nó sẽ thay đổi thành <button style="color: white; background: red">&#9003;</button>.) </li>
+<li> Chọn nhãn cần xóa. </li>
+<li> Đánh dấu nhãn. </li>
 </ol>
-Repeat steps 2 and 3 to delete additional annotations.
+Lặp lại bước 2 và 3 để xóa thêm các nhãn.
 <p>
 </dd>
 
-<dt><b>Repositioning an existing annotation</b></dt>
+
+<dt><b>Di chuyển vị trí nhãn hiện có</b></dt>
 <dd>
 <ol>
-<li> Select the annotation to be moved.
-<li> Move the edit marker bar to the desired location.
-<li> Mark the location.
+<li> Chọn nhãn cần di chuyển. </li>
+<li> Di chuyển thanh đánh dấu chỉnh sửa đến vị trí mong muốn. </li>
+<li> Đánh dấu vị trí. </li>
 </ol>
 </dd>
 </dl>
 
-<h3>Selecting an annotation type</h3>
+<h3>Chọn loại nhãn</h3>
 
-<p>
-In the annotation palette, click or touch the annotation type you want to
-highlight it.
+<p> Trong bảng nhãn, nhấp hoặc chạm vào loại nhãn bạn muốn để làm nổi bật nó.
 
 <div style="background-color: #bfb; border: 1px dotted gray; padding: 5px;">
-<p align="center"><b>Expanding the annotation palette</b></p>
+<p align="center"><b>Mở rộng bảng nhãn</b></p>
 
-If the annotation type you want is not already in the palette, there
-are two ways to add it:
+Nếu loại chú thích bạn muốn chưa có trong bảng màu, có
+hai cách để thêm chú thích đó:
 
 <ul>
-<li> Click or touch <button style="background: #8d8"><b>+</b></button> to
-open an annotation template.  Fill in the template to add a new type to the
-palette.
+<li> Nhấp hoặc chạm vào <button style="background: #8d8"><b>+</b></button> để
+mở một mẫu chú thích. Điền vào mẫu để thêm một loại mới vào bảng màu.
 
-<li> Select an existing annotation in the signal window, then click or touch
-<button style="background: #8d8">&#x21b3;</button> to copy it to the palette.
+<li> Chọn một chú thích hiện có trong cửa sổ tín hiệu, sau đó nhấp hoặc chạm vào
+<button style="background: #8d8">&#x21b3;</button> để sao chép nó vào bảng màu.
 </ul>
 
-When you add a new annotation type to the palette, it is selected immediately.
-If you try to add an annotation type that is already in the palette, it is
-selected, but no new button is added to the palette.  Unused additions may be
-replaced by newer additions.
+Khi bạn thêm một loại chú thích mới vào bảng màu, nó sẽ được chọn ngay lập tức.
+Nếu bạn cố gắng thêm một loại chú thích đã có trong bảng màu, nó sẽ được chọn,
+nhưng không có nút mới nào được thêm vào bảng màu. Các bổ sung không sử dụng có thể
+bị thay thế bởi các bổ sung mới hơn.
 </div>
 
 <div style="background-color: #bff; border: 1px dotted gray; padding: 5px;">
-<p align="center"><b>Annotation attributes</b></p>
+<p align="center"><b>Thuộc tính chú thích</b></p>
 
-<p>Annotations have five attributes that can be set in an annotation template:
+<p>Chú thích có năm thuộc tính có thể được thiết lập trong một mẫu chú thích:
 
 <dl>
-<dt><b>Annotation type</b></dt>
+<dt><b>Loại chú thích</b></dt>
 <dd>
-For existing annotations, the <em>type</em> is almost always a single character
-displayed in the signal window at the location of the annotation.  (Exception:
-type <b>N</b> annotations are displayed as <b>&bull;</b>;  this reduces visual
-clutter in the common case of annotating cardiac activity, when <b>N</b> marks
-a normal beat.)
+Đối với các chú thích hiện có, <em>loại</em> gần như luôn là một ký tự duy nhất
+hiển thị trong cửa sổ tín hiệu tại vị trí của chú thích. (Ngoại lệ:
+chú thích loại <b>N</b> được hiển thị dưới dạng <b>&bull;</b>; điều này giúp giảm
+sự lộn xộn về mặt hình ảnh trong trường hợp phổ biến khi chú thích hoạt động tim,
+khi <b>N</b> đánh dấu một nhịp bình thường.)
 </dd>
 
-<dt><b>Aux string</b></dt>
+<dt><b>Chuỗi phụ trợ (Aux string)</b></dt>
 <dd>
-This field is usually empty, but it can be a character string providing
-details related to the <em>type</em>.  For example, if <em>type</em> is
-<b>+</b> (indicating a change in cardiac rhythm), the <em>aux</em> string
-describes the new rhythm;  if <em>type</em> is <b>&quot;</b> (double quote
-character, indicating a note annotation), then <em>aux</em> is the content
-of the note.  Avoid long <em>aux</em> strings;  long comments can be
-continued across several annotations, incrementing <em>num</em> (below)
-to define the order.
+Trường này thường để trống, nhưng nó có thể là một chuỗi ký tự cung cấp
+chi tiết liên quan đến <em>loại</em>. Ví dụ, nếu <em>loại</em> là
+<b>+</b> (chỉ ra sự thay đổi trong nhịp tim), chuỗi <em>aux</em> mô tả nhịp mới;
+nếu <em>loại</em> là <b>&quot;</b> (ký tự dấu ngoặc kép, chỉ ra chú thích ghi chú),
+thì <em>aux</em> là nội dung của ghi chú. Tránh các chuỗi <em>aux</em> dài;
+các nhận xét dài có thể được tiếp tục qua nhiều chú thích, tăng <em>num</em> (bên dưới)
+để xác định thứ tự.
 </dd>
 
-<dt><b>Subtype</b></dt>
+<dt><b>Phân loại phụ (Subtype)</b></dt>
 <dd>
-An integer between -128 and 127 inclusive, usually empty or 0.
+Một số nguyên trong khoảng từ -128 đến 127, thường để trống hoặc bằng 0.
 </dd>
 
-<dt><b>Chan</b></dt>
+<dt><b>Kênh (Chan)</b></dt>
 <dd>
-An integer between 0 and 255 inclusive, usually empty or 0.
+Một số nguyên trong khoảng từ 0 đến 255, thường để trống hoặc bằng 0.
 </dd>
 
-<dt><b>Num</b></dt>
+<dt><b>Số thứ tự (Num)</b></dt>
 <dd>
-An integer between -128 and 127 inclusive, usually empty or 0.
+Một số nguyên trong khoảng từ -128 đến 127, thường để trống hoặc bằng 0.
 </dd>
 </dl>
 
 <p>
-Although a <a href="http://physionet.org/physiobank/annotations.shtml">standard
-set of annotation <em>type</em>s and <em>aux</em> strings</a> is shared among
-many projects, the <em>subtype</em>, <em>chan</em>, and <em>num</em> attributes
-have no standard meanings.  Moreover, database creators may assign non-standard
-<em>type</em>s and <em>aux</em> strings, particularly if the signals are
-not electrocardiograms.  If you wish to contribute annotations to an existing
-database, please take care to familiarize yourself with its annotation
-conventions (which are usually outlined on the database's home page).
+Mặc dù một <a href="http://physionet.org/physiobank/annotations.shtml">bộ tiêu chuẩn
+các <em>loại</em> chú thích và chuỗi <em>aux</em></a> được chia sẻ giữa nhiều dự án,
+các thuộc tính <em>subtype</em>, <em>chan</em>, và <em>num</em> không có ý nghĩa tiêu chuẩn.
+Hơn nữa, các nhà tạo cơ sở dữ liệu có thể gán các <em>loại</em> và chuỗi <em>aux</em>
+không tiêu chuẩn, đặc biệt nếu các tín hiệu không phải là điện tâm đồ. Nếu bạn muốn
+đóng góp chú thích cho một cơ sở dữ liệu hiện có, vui lòng làm quen với các quy ước
+chú thích của nó (thường được phác thảo trên trang chủ của cơ sở dữ liệu).
 </div>
 
-<h3>Moving the edit marker bar</h3>
+<h3>Di chuyển thanh đánh dấu chỉnh sửa</h3>
 
 <p>
-Using the mouse interface, move the pointer anywhere in the signal window; the
-edit marker will follow the pointer.
+Sử dụng giao diện chuột, di chuyển con trỏ đến bất kỳ vị trí nào trong cửa sổ tín hiệu; 
+thanh đánh dấu chỉnh sửa sẽ theo con trỏ.
 
 <p>
-Using the touch interface, touch near the desired location in the signal window;
-the edit marker appears at the last position touched.  Repeat if necessary, then
-use <button>&#8612;</button> and <button>&#8614;</button> to make fine
-adjustments to the position of the bar.  The position increment increases
-gradually if you use either of these buttons repeatedly; switching to the other
-one reverses direction and resets the position increment to its minimum value.
+Sử dụng giao diện cảm ứng, chạm gần vị trí mong muốn trong cửa sổ tín hiệu; 
+thanh đánh dấu chỉnh sửa sẽ xuất hiện tại vị trí cuối cùng được chạm. 
+Lặp lại nếu cần, sau đó sử dụng <button>&#8612;</button> và <button>&#8614;</button> 
+để điều chỉnh vị trí của thanh một cách chính xác. 
+Khoảng cách điều chỉnh sẽ tăng dần nếu bạn sử dụng một trong hai nút này liên tục; 
+chuyển sang nút còn lại sẽ đảo ngược hướng và đặt lại khoảng cách điều chỉnh về giá trị nhỏ nhất.
 
 <p>
-If the marker does not move smoothly, you may have a more satisfactory
-experience using a different web browser.  Note your network connection does
-not affect the speed of display updates, since all editing operations are
-performed by the browser, without communicating with the server.
+Nếu thanh đánh dấu không di chuyển mượt mà, bạn có thể có trải nghiệm tốt hơn 
+khi sử dụng một trình duyệt web khác. Lưu ý rằng kết nối mạng của bạn không ảnh hưởng 
+đến tốc độ cập nhật hiển thị, vì tất cả các thao tác chỉnh sửa được thực hiện bởi trình duyệt, 
+mà không cần giao tiếp với máy chủ.
 
 <p>
-Using either interface, use <button>&#8676;</button> and
-<button>&#8677;</button> to move rapidly from one annotation to the next.  (If
-the next annotation is off-screen, the signal window is redrawn, centered on the
-next annotation.)  If there are no more annotations in the chosen direction, the
-edit marker appears at the expected position of the next annotation (determined
-by extrapolation).
+Sử dụng bất kỳ giao diện nào, sử dụng <button>&#8676;</button> và 
+<button>&#8677;</button> để di chuyển nhanh từ chú thích này sang chú thích khác. 
+(Nếu chú thích tiếp theo nằm ngoài màn hình, cửa sổ tín hiệu sẽ được vẽ lại, 
+tập trung vào chú thích tiếp theo.) Nếu không còn chú thích nào trong hướng đã chọn, 
+thanh đánh dấu chỉnh sửa sẽ xuất hiện tại vị trí dự kiến của chú thích tiếp theo 
+(được xác định bằng cách ngoại suy).
 
-<h3>Marking a location (inserting an annotation)</h3>
-
-<p>
-Using the mouse interface, simply click once the marker bar is in the desired
-location to insert an annotation of the type chosen from the annotation palette.
-Keep the pointer well above or below any existing annotation label to avoid
-selecting and replacing the existing annotation rather than inserting a new one.
+<h3>Đánh dấu một vị trí (chèn chú thích)</h3>
 
 <p>
-Using the touch interface, touch <button>Mark</button> once the marker bar is in
-the desired location.
+Sử dụng giao diện chuột, chỉ cần nhấp chuột một lần khi thanh đánh dấu đã ở vị trí mong muốn 
+để chèn một chú thích thuộc loại đã chọn từ bảng chú thích. 
+Giữ con trỏ chuột ở trên hoặc dưới bất kỳ nhãn chú thích hiện có nào để tránh 
+chọn và thay thế chú thích hiện có thay vì chèn một chú thích mới.
+
+<p>
+Sử dụng giao diện cảm ứng, chạm vào <button>Mark</button> khi thanh đánh dấu đã ở 
+vị trí mong muốn.
 
 <h3>Selecting an annotation</h3>
 
@@ -382,103 +304,70 @@ Use <button>&#8676;</button> and <button>&#8677;</button> to select an
 annotation.  A <em>selection rectangle</em> appears surrounding the label
 of the selected annotation.
 
-<h3>Marking an annotation</h3>
+<h3>Chọn một chú thích</h3>
 
 <p>
-Use <button>Mark</button> to change the selected annotation to the palette
-choice (or to delete it, if the palette choice was <button style="color:
-white; background: red">&#9003;</button>).
- 
+Sử dụng <button>&#8676;</button> và <button>&#8677;</button> để chọn một chú thích.  
+Một <em>hình chữ nhật lựa chọn</em> sẽ xuất hiện bao quanh nhãn của chú thích được chọn.
 
-<h4>Mouse shortcut: Selecting and marking an annotation</h4>
+<h3>Đánh dấu một chú thích</h3>
 
 <p>
-If you have enabled mouse shortcuts on the <b>Settings</b> tab, press and hold
-the mouse button while the pointer is over an annotation label.  The selection
-rectangle will appear around the annotation.  Release the mouse button with the
-pointer <em>inside</em> the selection rectangle to change or delete the
-annotation.
+Sử dụng <button>Mark</button> để thay đổi chú thích được chọn thành lựa chọn từ bảng màu  
+(hoặc để xóa nó, nếu lựa chọn từ bảng màu là <button style="color: white; background: red">&#9003;</button>).
 
-<h3>Moving an annotation</h3>
+<h4>Phím tắt chuột: Chọn và đánh dấu một chú thích</h4>
 
 <p>
-After selecting the annotation to be moved, use <button>&#8612;</button>
-and <button>&#8614;</button> to move the edit marker bar to the desired
-location, then touch or click <button>Mark</button> to move the annotation.
+Nếu bạn đã bật phím tắt chuột trong tab <b>Cài đặt</b>, nhấn và giữ nút chuột  
+khi con trỏ nằm trên nhãn của một chú thích. Hình chữ nhật lựa chọn sẽ xuất hiện  
+xung quanh chú thích. Thả nút chuột khi con trỏ nằm <em>bên trong</em> hình chữ nhật lựa chọn  
+để thay đổi hoặc xóa chú thích.
 
-<h4>Mouse shortcut: Selecting and moving an annotation</h4>
-
-<p>
-If you have enabled mouse shortcuts on the <b>Settings</b> tab, press and hold
-the mouse button while the pointer is over an annotation label.  The selection
-rectangle will appear around the annotation.  Release the mouse button with the
-pointer <em>outside</em> the selection rectangle ("click and drag").
+<h3>Di chuyển một chú thích</h3>
 
 <p>
-To move the annotation by less than the distance to the edge of the selection
-rectangle, simply move the pointer above or below the rectangle.
+Sau khi chọn chú thích cần di chuyển, sử dụng <button>&#8612;</button> và 
+<button>&#8614;</button> để di chuyển thanh đánh dấu chỉnh sửa đến vị trí mong muốn, 
+sau đó chạm hoặc nhấp vào <button>Mark</button> để di chuyển chú thích.
 
-<h3>Correcting editing errors</h3>
-
-<p>
-Editing errors are probably inevitable, but they are easy to correct.
-Use <button>Undo</button> to restore the state before the most recent
-edit.  You may use <button>Undo</button> repeatedly to undo as many
-edits as you wish.  If the edit log is visible, you will see that each
-edit is recorded as one line of the log;  undone edits appear in red.
+<h4>Phím tắt chuột: Chọn và di chuyển một chú thích</h4>
 
 <p>
-If you undo an edit that you intended to keep, use <button>Redo</button>
-to restore it.  You may use <button>Redo</button> repeatedly until there
-are no more undone edits.
-
-<h3>Saving your edits</h3>
-
-<p>
-If it is not already open, load the record you edited, and select the annotation
-set you wish to save (click on its name in the <b>View</b> tab to highlight
-it).  On the <b>Settings</b> tab, click on <button>Save pending edits</button>.
+Nếu bạn đã bật phím tắt chuột trong tab <b>Cài đặt</b>, nhấn và giữ nút chuột 
+khi con trỏ nằm trên nhãn của một chú thích. Hình chữ nhật lựa chọn sẽ xuất hiện 
+xung quanh chú thích. Thả nút chuột khi con trỏ nằm <em>bên ngoài</em> hình chữ nhật lựa chọn 
+("nhấp và kéo").
 
 <p>
-When you do this, your edits are transmitted to the LightWAVE scribe (a process
-that runs side-by-side with the LightWAVE server).  The scribe merges your edits
-with the original version of the annotation set you have edited (if any) and
-writes the results to a PhysioBank-compatible (binary) annotation file on the
-LightWAVE server's host file system.
+Để di chuyển chú thích với khoảng cách nhỏ hơn khoảng cách đến cạnh của hình chữ nhật lựa chọn, 
+chỉ cần di chuyển con trỏ lên trên hoặc xuống dưới hình chữ nhật.
+
+<h3>Chỉnh sửa lỗi</h3>
 
 <p>
-<em>If you have used PhysioNet's public LightWAVE client</em>, a status message
-appears within a few seconds below the <button>Save pending edits</button>, like
-this:
-
-<blockquote>
-Edits for record <b>ahadb/0201</b>, annotator <b>atr</b> backed up successfully.
-<br>
-<u style="color: blue">Download (opens in another browser tab or window)</u>
-</blockquote>
+Các lỗi chỉnh sửa có thể không tránh khỏi, nhưng chúng rất dễ sửa chữa. 
+Sử dụng <button>Undo</button> để khôi phục trạng thái trước chỉnh sửa gần nhất. 
+Bạn có thể sử dụng <button>Undo</button> nhiều lần để hoàn tác bao nhiêu chỉnh sửa tùy ý. 
+Nếu nhật ký chỉnh sửa hiển thị, bạn sẽ thấy mỗi chỉnh sửa được ghi lại dưới dạng một dòng trong nhật ký; 
+các chỉnh sửa đã hoàn tác sẽ xuất hiện màu đỏ.
 
 <p>
-Once your edits have been saved on the LightWAVE server, you may download the
-updated annotation file and save a copy of it on your computer.  Click on the
-download link to access the edit logs and PhysioBank-compatible annotation files
-that you have backed up.  
+Nếu bạn hoàn tác một chỉnh sửa mà bạn muốn giữ lại, hãy sử dụng <button>Redo</button> 
+để khôi phục nó. Bạn có thể sử dụng <button>Redo</button> nhiều lần cho đến khi không còn chỉnh sửa nào bị hoàn tác.
+
+<h3>Lưu các chỉnh sửa của bạn</h3>
 
 <p>
-<em>If you have used the PhysioNetWorks-hosted LightWAVE client</em>, your saved
-annotations are written to your workspace, where they are accessible only to
-you.  For example, if your PhysioNetWorks user name is
-<tt>harry@gryffindor.hogwarts.ac.uk</tt>, and you have saved an edited set
-of <tt>fqrs</tt> annotations for record <tt>challenge/2013/set-a/a03</tt>, they
-will be accessible to you (only) at
-<tt>https://physionet.org/users/harry@gryffindor.hogwarts.ac.uk/works/database/challenge/2013/set-a/a03.fqrs</tt>.
-The LightWAVE scribe creates any missing directories as needed so that you will
-be able to access your uploaded annotations using LightWAVE for PhysioNetWorks,
-or using any other WFDB applications if you have authenticated yourself
-using <tt>pnwlogin</tt> (included in WFDB 10.5.14, August 2012, and later
-versions).
+Nếu bản ghi bạn đã chỉnh sửa chưa được mở, hãy tải bản ghi đó và chọn bộ chú thích 
+mà bạn muốn lưu (nhấp vào tên của nó trong tab <b>Xem</b> để làm nổi bật). 
+Trong tab <b>Cài đặt</b>, nhấp vào <button>Lưu các chỉnh sửa</button>.
 
 <p>
-To share a saved annotation file with others, copy it into a location
-accessible to those with whom you wish to share it.
+Khi bạn thực hiện điều này, các chỉnh sửa của bạn sẽ được truyền đến LightWAVE scribe 
+(một quy trình chạy song song với máy chủ LightWAVE). Scribe sẽ hợp nhất các chỉnh sửa của bạn 
+với phiên bản gốc của bộ chú thích mà bạn đã chỉnh sửa (nếu có) và ghi kết quả 
+vào một tệp chú thích nhị phân tương thích với PhysioBank trên hệ thống tệp của máy chủ LightWAVE.
+
 </ol>
 </html>

@@ -7,207 +7,130 @@
 <link rel="stylesheet" href="../css/lightwave.css">
 </head>
 
-<h2>Standard annotation types</h2>
+<h2>Các loại chú thích tiêu chuẩn</h2>
 
 <p>
-Most PhysioBank databases include one or more sets of <em>annotations</em> for
-each recording.  Annotations are labels that point to specific locations within
-a recording and describe events at those locations.  For example, many of the
-recordings that contain ECG signals have annotations that indicate the times
-of occurrence and types of each individual heart beat ("beat-by-beat
-annotations").
+Hầu hết các cơ sở dữ liệu PhysioBank bao gồm một hoặc nhiều tập hợp <em>chú thích</em> cho
+mỗi bản ghi. Chú thích là các nhãn chỉ đến các vị trí cụ thể trong một bản ghi và mô tả các sự kiện tại các vị trí đó. Ví dụ, nhiều bản ghi chứa tín hiệu ECG có các chú thích chỉ ra thời gian xảy ra và loại của từng nhịp tim riêng lẻ ("chú thích từng nhịp").
+</p>
 
 <p>
-LightWAVE displays annotations on the <b>View/edit</b> tab in the signal window,
-and on the <b>Tables</b> tab if you check <em>View annotations as text</em>.
-Annotations can also be examined using many other programs available on
-PhysioNet.  These programs display annotations using a common set of codes
-(mnemonics).  Many of these programs, including LightWAVE, accept these codes
-as user input (for example, to select specific annotation types for analysis).
+LightWAVE hiển thị các chú thích trên tab <b>Xem/chỉnh sửa</b> trong cửa sổ tín hiệu,
+và trên tab <b>Bảng</b> nếu bạn chọn <em>Xem chú thích dưới dạng văn bản</em>.
+Các chú thích cũng có thể được kiểm tra bằng nhiều chương trình khác có sẵn trên
+PhysioNet. Các chương trình này hiển thị chú thích bằng một tập hợp mã chung
+(ký hiệu). Nhiều chương trình trong số này, bao gồm cả LightWAVE, chấp nhận các mã này
+làm đầu vào của người dùng (ví dụ, để chọn các loại chú thích cụ thể để phân tích).
+</p>
 
 <p>
-The standard set of annotation codes was originally defined for ECGs, and
-includes both beat annotations and non-beat annotations.  Most PhysioBank
-databases use these codes as described below.  Refer to the documentation for
-each database to confirm if the annotation codes have their standard
-meanings.
+Bộ mã chú thích tiêu chuẩn ban đầu được định nghĩa cho các tín hiệu ECG và bao gồm cả chú thích nhịp tim và chú thích không phải nhịp tim. Hầu hết các cơ sở dữ liệu PhysioBank sử dụng các mã này như được mô tả dưới đây. Vui lòng tham khảo tài liệu của từng cơ sở dữ liệu để xác nhận xem các mã chú thích có ý nghĩa tiêu chuẩn hay không.
+</p>
 
 <p>
-<em>Beat annotations:</em>
+<em>Chú thích nhịp tim:</em>
 <table>
-<tr><th>Code</th><th width=1%></th><th align=left>Description</th></tr>
-<tr><td align=center><tt>N</tt></td><td></td><td>Normal beat (displayed as
-"<b>&middot;</b>" by the PhysioBank ATM, LightWAVE, pschart, and psfd)</td></tr>
-<tr><td align=center><tt>L</tt></td><td></td><td>Left bundle branch block beat</td></tr>
-<tr><td align=center><tt>R</tt></td><td></td><td>Right bundle branch block beat</td></tr>
-<tr><td align=center><tt>B</tt></td><td></td><td>Bundle branch block beat (unspecified)</td></tr>
-<tr><td align=center><tt>A</tt></td><td></td><td>Atrial premature beat</td></tr>
-<tr><td align=center><tt>a</tt></td><td></td><td>Aberrated atrial premature beat</td></tr>
-<tr><td align=center><tt>J</tt></td><td></td><td>Nodal (junctional) premature beat</td></tr>
-<tr><td align=center><tt>S</tt></td><td></td><td>Supraventricular premature or ectopic beat (atrial or nodal)</td></tr>
-<tr><td align=center><tt>V</tt></td><td></td><td>Premature ventricular contraction</td></tr>
-<tr><td align=center><tt>r</tt></td><td></td><td>R-on-T premature ventricular contraction</td></tr>
-<tr><td align=center><tt>F</tt></td><td></td><td>Fusion of ventricular and normal beat</td></tr>
-<tr><td align=center><tt>e</tt></td><td></td><td>Atrial escape beat</td></tr>
-<tr><td align=center><tt>j</tt></td><td></td><td>Nodal (junctional) escape beat</td></tr>
-<tr><td align=center><tt>n</tt></td><td></td><td>Supraventricular escape beat (atrial or nodal)</td></tr>
-<tr><td align=center><tt>E</tt></td><td></td><td>Ventricular escape beat</td></tr>
-<tr><td align=center><tt>/</tt></td><td></td><td>Paced beat</td></tr>
-<tr><td align=center><tt>f</tt></td><td></td><td>Fusion of paced and normal beat</td></tr>
-<tr><td align=center><tt>Q</tt></td><td></td><td>Unclassifiable beat</td></tr>
-<tr><td align=center><tt>?</tt></td><td></td><td>Beat not classified during learning</td></tr>
+<tr><th>Mã</th><th width=1%></th><th align=left>Mô tả</th></tr>
+<tr><td align=center><tt>N</tt></td><td></td><td>Nhịp tim bình thường (hiển thị dưới dạng
+"<b>&middot;</b>" bởi PhysioBank ATM, LightWAVE, pschart, và psfd)</td></tr>
+<tr><td align=center><tt>L</tt></td><td></td><td>Nhịp tim block nhánh trái</td></tr>
+<tr><td align=center><tt>R</tt></td><td></td><td>Nhịp tim block nhánh phải</td></tr>
+<tr><td align=center><tt>B</tt></td><td></td><td>Nhịp tim block nhánh (không xác định)</td></tr>
+<tr><td align=center><tt>A</tt></td><td></td><td>Nhịp tim sớm nhĩ</td></tr>
+<tr><td align=center><tt>a</tt></td><td></td><td>Nhịp tim sớm nhĩ bất thường</td></tr>
+<tr><td align=center><tt>J</tt></td><td></td><td>Nhịp tim sớm nút (nối)</td></tr>
+<tr><td align=center><tt>S</tt></td><td></td><td>Nhịp tim sớm hoặc lạc chỗ trên thất (nhĩ hoặc nút)</td></tr>
+<tr><td align=center><tt>V</tt></td><td></td><td>Nhịp co thắt sớm thất</td></tr>
+<tr><td align=center><tt>r</tt></td><td></td><td>Nhịp co thắt sớm thất kiểu R-on-T</td></tr>
+<tr><td align=center><tt>F</tt></td><td></td><td>Hợp nhất giữa nhịp thất và nhịp bình thường</td></tr>
+<tr><td align=center><tt>e</tt></td><td></td><td>Nhịp thoát nhĩ</td></tr>
+<tr><td align=center><tt>j</tt></td><td></td><td>Nhịp thoát nút (nối)</td></tr>
+<tr><td align=center><tt>n</tt></td><td></td><td>Nhịp thoát trên thất (nhĩ hoặc nút)</td></tr>
+<tr><td align=center><tt>E</tt></td><td></td><td>Nhịp thoát thất</td></tr>
+<tr><td align=center><tt>/</tt></td><td></td><td>Nhịp tạo nhịp</td></tr>
+<tr><td align=center><tt>f</tt></td><td></td><td>Hợp nhất giữa nhịp tạo nhịp và nhịp bình thường</td></tr>
+<tr><td align=center><tt>Q</tt></td><td></td><td>Nhịp không phân loại được</td></tr>
+<tr><td align=center><tt>?</tt></td><td></td><td>Nhịp không được phân loại trong quá trình học</td></tr>
 <tr><td></table>
 
-<p>
-<em>Non-beat annotations:</em>
+    <p>
+<em>Chú thích không phải nhịp tim:</em>
 <table>
-<tr><th>Code</th><th width=1%></th><th align=left>Description</th></tr>
-<tr><td align=center><tt>[</tt></td><td></td><td>Start of ventricular flutter/fibrillation</td></tr>
-<tr><td align=center><tt>!</tt></td><td></td><td>Ventricular flutter wave</td></tr>
-<tr><td align=center><tt>]</tt></td><td></td><td>End of ventricular flutter/fibrillation</td></tr>
-<tr><td align=center><tt>x</tt></td><td></td><td>Non-conducted P-wave (blocked APC)</td></tr>
-<tr><td align=center><tt>(</tt></td><td></td><td>Waveform onset</td></tr>
-<tr><td align=center><tt>)</tt></td><td></td><td>Waveform end</td></tr>
-<tr><td align=center><tt>p</tt></td><td></td><td>Peak of P-wave</td></tr>
-<tr><td align=center><tt>t</tt></td><td></td><td>Peak of T-wave</td></tr>
-<tr><td align=center><tt>u</tt></td><td></td><td>Peak of U-wave</td></tr>
-<tr><td align=center><tt>`</tt></td><td></td><td>PQ junction</td></tr>
-<tr><td align=center><tt>'</tt></td><td></td><td>J-point</td></tr>
-<tr><td align=center><tt>^</tt></td><td></td><td>(Non-captured) pacemaker artifact</td></tr>
-<tr><td align=center><tt>|</tt></td><td></td><td>Isolated QRS-like artifact
+<tr><th>Mã</th><th width=1%></th><th align=left>Mô tả</th></tr>
+<tr><td align=center><tt>[</tt></td><td></td><td>Bắt đầu rung/cuồng thất</td></tr>
+<tr><td align=center><tt>!</tt></td><td></td><td>Sóng cuồng thất</td></tr>
+<tr><td align=center><tt>]</tt></td><td></td><td>Kết thúc rung/cuồng thất</td></tr>
+<tr><td align=center><tt>x</tt></td><td></td><td>Sóng P không dẫn truyền (APC bị chặn)</td></tr>
+<tr><td align=center><tt>(</tt></td><td></td><td>Bắt đầu dạng sóng</td></tr>
+<tr><td align=center><tt>)</tt></td><td></td><td>Kết thúc dạng sóng</td></tr>
+<tr><td align=center><tt>p</tt></td><td></td><td>Đỉnh sóng P</td></tr>
+<tr><td align=center><tt>t</tt></td><td></td><td>Đỉnh sóng T</td></tr>
+<tr><td align=center><tt>u</tt></td><td></td><td>Đỉnh sóng U</td></tr>
+<tr><td align=center><tt>`</tt></td><td></td><td>Điểm nối PQ</td></tr>
+<tr><td align=center><tt>'</tt></td><td></td><td>Điểm J</td></tr>
+<tr><td align=center><tt>^</tt></td><td></td><td>Hiện tượng máy tạo nhịp không bắt được</td></tr>
+<tr><td align=center><tt>|</tt></td><td></td><td>Hiện tượng giống QRS cô lập
 <a href="#noise">[1]</a></td></tr>
-<tr><td align=center><tt>~</tt></td><td></td><td>Change in signal quality
+<tr><td align=center><tt>~</tt></td><td></td><td>Thay đổi chất lượng tín hiệu
 <a href="#noise">[1]</a></td></tr>
-<tr><td align=center><tt>+</tt></td><td></td><td>Rhythm change <a href="#aux">[2]</a></td></tr>
-<tr><td align=center><tt>s</tt></td><td></td><td>ST segment change <a href="#aux">[2]</a></td></tr>
-<tr><td align=center><tt>T</tt></td><td></td><td>T-wave change <a href="#aux">[2]</a></td></tr>
-<tr><td align=center><tt>*</tt></td><td></td><td>Systole</td></tr>
-<tr><td align=center><tt>D</tt></td><td></td><td>Diastole</td></tr>
-<tr><td align=center><tt>=</tt></td><td></td><td>Measurement annotation <a href="#aux">[2]</a></td></tr>
-<tr><td align=center><tt>&quot;</tt></td><td></td><td>Comment annotation <a href="#aux">[2]</a></td></tr>
-<tr><td align=center><tt>@</tt></td><td></td><td>Link to external data <a href="#link">[3]</a></td></tr>
+<tr><td align=center><tt>+</tt></td><td></td><td>Thay đổi nhịp <a href="#aux">[2]</a></td></tr>
+<tr><td align=center><tt>s</tt></td><td></td><td>Thay đổi đoạn ST <a href="#aux">[2]</a></td></tr>
+<tr><td align=center><tt>T</tt></td><td></td><td>Thay đổi sóng T <a href="#aux">[2]</a></td></tr>
+<tr><td align=center><tt>*</tt></td><td></td><td>Tâm thu</td></tr>
+<tr><td align=center><tt>D</tt></td><td></td><td>Tâm trương</td></tr>
+<tr><td align=center><tt>=</tt></td><td></td><td>Chú thích đo lường <a href="#aux">[2]</a></td></tr>
+<tr><td align=center><tt>&quot;</tt></td><td></td><td>Chú thích nhận xét <a href="#aux">[2]</a></td></tr>
+<tr><td align=center><tt>@</tt></td><td></td><td>Liên kết đến dữ liệu bên ngoài <a href="#link">[3]</a></td></tr>
 </table>
 
-<p> <em>Annotation attributes</em>: Each instance of an annotation may have up
-to six attributes:
-<ul>
-<li><tt>time</tt>:  the time within the recording (recorded in the annotation
-file as the sample number of the sample to which the annotation
-&quot;points&quot;)
-<li><tt>anntyp</tt> [sic]:  a numeric annotation code (see
-<a href="http://physionet.org/physiotools/wfdb/lib/ecgcodes.h"><tt>ecgcodes.h</tt></a> for
-definitions, and see the definitions of <tt>astring</tt> and <tt>tstring</tt> in
-<a href="http://physionet.org/physiotools/wfdb/lib/annot.c"><tt>annot.c</tt></a>
-for the mappings between these numeric codes and the mnemonic codes and
-descriptions given above)
-<li><tt>subtyp</tt> [sic], <tt>chan</tt>, <tt>num</tt>: three small integers
-(<tt>chan</tt> is between 0 and 255, and the others are between -128 and 127)
-that specify context-dependent attributes (see the documentation for each
-database for details)
-<li><tt>aux</tt>:  a free text string <a href="#aux">[2]</a>, up to 255
-characters long
-</ul>
-
-<p> <b><tt>rdann</tt></b> <em>(text) format for annotations</em>: If you
-check <em>View annotations as text</em> on the <b>Tables</b> tab, LightWAVE
-presents each annotation's attributes in one line, in left-to-right order,
-although <tt>aux</tt> is omitted if (as is most often true) it is empty.
-The <tt>time</tt> attribute appears twice (in the first column, converted to
-hours, minutes, seconds and milliseconds; and in the second column, as the
-sample number).  This text format is called <tt>rdann</tt> format because it is
-also produced by
-<a href="http://physionet.org/physiotools/wag/rdann-1.htm"><tt>rdann</tt></a>
-and accepted as input by
-<a href="http://physionet.org/physiotools/wag/wrann-1.htm"><tt>wrann</tt></a>,
-two stand-alone applications from the
-<a href="http://physionet.org/physiotools/wfdb.shtml">WFDB Software Package</a>.
-
-<p> <em>PhysioBank-compatible annotation format</em>: Within PhysioBank,
-annotations are stored in a compact binary format that requires only 2 bytes for
-most annotations.  Details on this binary format are available
-<a href="http://physionet.org/physiotools/wag/annot-5.htm">here</a>.  This
-format can be read by C, C++, and Fortran applications using <tt>getann</tt>,
-and they can be written using <tt>putann</tt>, functions defined within the
-<a href="http://physionet.org/physiotools/wfdb.shtml">WFDB library</a>.  Matlab
-and Octave programs can read and write PhysioBank-compatible annotation files
-using any of <a href="http://physionet.org/physiotools/matlab/#wfdb">these
-solutions</a>.  Alternatively, such files can be read and written by scripting
-language applications using <tt>rdann</tt> and <tt>wrann</tt>.  The LightWAVE
-server reads PhysioBank-compatible annotation files and translates them to JSON
-for transmission to the LightWAVE client (see <a href="lw-api.html">The
-LightWAVE Server Protocol</a>).  Annotations created using LightWAVE are
-collected by LightWAVE's <em>scribe</em> and stored in PhysioBank-compatible
-binary format.
 
 <p>
-<strong>Footnotes:</strong>
-
-<ol>
-<a name="noise"></a>
-<li>
-In artifact and signal quality change annotations, each non-zero bit from the
-four least significant bits in the <tt>subtyp</tt> attribute of the annotation
-indicates that the corresponding signal contains noise (the least significant
-bit corresponds to signal 0, the uppermost in the signal window).  The four high
-bits, if non-zero, indicate that the corresponding signals are unreadable
-(because of very high noise amplitude, very low signal amplitude, loss of
-signal, or some combination of these).  These annotations, where they exist,
-reflect the expert annotator's subjective judgements only.  In <tt>rdann</tt>
-text format, the <tt>subtyp</tt> field is the fourth column of output, to the
-right of the annotation code.  [When displaying signal quality change
-annotations, the ATM, <tt>pschart</tt>,
-<tt>psfd</tt>, and WAVE do not show the annotation code (<tt>~</tt>) itself;
-rather, they display a string with one character (<tt>c</tt> for clean,
-<tt>n</tt> for noisy, or <tt>u</tt> for unreadable) for each signal
-(beginning with signal 0); this feature is not implemented in LightWAVE.]
-
-<a name="aux"></a>
-<li>
-In rhythm, ST segment, and T-wave change annotations, and in measurement and
-comment annotations, the <tt>aux</tt> field contains an ASCII string (with
-prefixed byte count) describing the rhythm, ST segment, T-wave change,
-measurement, or the nature of the comment.  By convention, the character that
-follows the byte count in the <tt>aux</tt> field of a <tt>+</tt> annotation is
-&quot;<tt>(</tt>&quot;.  The most commonly used <tt>aux</tt> rhythm labels are:
-
-<table>
-<tr><th>String</th><th width="1%"></th><th align=left>Description</th></tr>
-<tr><td align=center>(AB</td><td></td><td>Atrial bigeminy</td></tr>
-<tr><td align=center>(AFIB</td><td></td><td>Atrial fibrillation</td></tr>
-<tr><td align=center>(AFL</td><td></td><td>Atrial flutter</td></tr>
-<tr><td align=center>(B</td><td></td><td>Ventricular bigeminy</td></tr>
-<tr><td align=center>(BII</td><td></td><td>2&deg; heart block</td></tr>
-<tr><td align=center>(IVR</td><td></td><td>Idioventricular rhythm</td></tr>
-<tr><td align=center>(N</td><td></td><td>Normal sinus rhythm</td></tr>
-<tr><td align=center>(NOD</td><td></td><td>Nodal (A-V junctional) rhythm</td></tr>
-<tr><td align=center>(P</td><td></td><td>Paced rhythm</td></tr>
-<tr><td align=center>(PREX</td><td></td><td>Pre-excitation (WPW)</td></tr>
-<tr><td align=center>(SBR</td><td></td><td>Sinus bradycardia</td></tr>
-<tr><td align=center>(SVTA</td><td></td><td>Supraventricular tachyarrhythmia</td></tr>
-<tr><td align=center>(T</td><td></td><td>Ventricular trigeminy</td></tr>
-<tr><td align=center>(VFL</td><td></td><td>Ventricular flutter</td></tr>
-<tr><td align=center>(VT</td><td></td><td>Ventricular tachycardia</td></tr>
-</table>
-
-In a few cases, other <tt>aux</tt> rhythm labels have been used; see the
-documentation for the associated database for further information in such cases.
-In <tt>rdann</tt> (text) format, the <tt>aux</tt> string appears at the end of
-the line (following the sixth column of output) for any annotation that has a
-non-empty <tt>aux</tt> field; the prefixed byte count is not shown explicitly.
-In LightWAVE's signal window, and in similar plots made by other PhysioToolkit
-applications, if <tt>aux</tt> is present, it appears in place of the annotation
-code; by convention, <tt>aux</tt> rhythm labels appear below beat labels, and
-other <tt>aux</tt> strings appear above beat labels.  When waveforms are shown
-at condensed scales such that <tt>aux</tt> strings might overlap, some of these
-programs automatically or optionally produce abbreviated versions of
-the <tt>aux</tt> strings in order to keep the display readable; refer to the
-documentation for each program for further details [LightWAVE does not do this].
-
-<a name="link"></a> <li> The <tt>aux</tt> field of a link annotation contains a
-URL (a uniform resource locator, in the form
-<tt>http://machine.name/some/data</tt>).  Link annotations may be used to
-associate extended text, images, or other data with an annotation file.  If the
-<tt>aux</tt> field contains any whitespace, text following the first whitespace
-is descriptive (not part of the URL).  </ol>
-
+    <strong>Chú thích cuối trang:</strong>
+    
+    <ol>
+    <a name="noise"></a>
+    <li>
+    Trong các chú thích về hiện vật và thay đổi chất lượng tín hiệu, mỗi bit khác 0 từ
+    bốn bit ít quan trọng nhất trong thuộc tính <tt>subtyp</tt> của chú thích
+    chỉ ra rằng tín hiệu tương ứng chứa nhiễu (bit ít quan trọng nhất tương ứng với tín hiệu 0, tín hiệu trên cùng trong cửa sổ tín hiệu). Bốn bit cao, nếu khác 0, chỉ ra rằng các tín hiệu tương ứng không thể đọc được
+    (do biên độ nhiễu rất cao, biên độ tín hiệu rất thấp, mất tín hiệu, hoặc sự kết hợp của các yếu tố này). Các chú thích này, nếu có, phản ánh đánh giá chủ quan của chuyên gia chú thích. Trong định dạng văn bản <tt>rdann</tt>,
+    trường <tt>subtyp</tt> là cột thứ tư của đầu ra, nằm bên phải mã chú thích. [Khi hiển thị các chú thích thay đổi chất lượng tín hiệu, ATM, <tt>pschart</tt>,
+    <tt>psfd</tt>, và WAVE không hiển thị mã chú thích (<tt>~</tt>) mà thay vào đó hiển thị một chuỗi với một ký tự (<tt>c</tt> cho sạch,
+    <tt>n</tt> cho nhiễu, hoặc <tt>u</tt> cho không thể đọc được) cho mỗi tín hiệu
+    (bắt đầu từ tín hiệu 0); tính năng này không được triển khai trong LightWAVE.]
+    </li>
+    
+    <a name="aux"></a>
+    <li>
+    Trong các chú thích về nhịp, đoạn ST, và thay đổi sóng T, cũng như trong các chú thích đo lường và nhận xét, trường <tt>aux</tt> chứa một chuỗi ASCII (với số byte được thêm vào trước) mô tả nhịp, đoạn ST, thay đổi sóng T, đo lường, hoặc bản chất của nhận xét. Theo quy ước, ký tự theo sau số byte trong trường <tt>aux</tt> của một chú thích <tt>+</tt> là
+    &quot;<tt>(</tt>&quot;. Các nhãn nhịp <tt>aux</tt> được sử dụng phổ biến nhất là:
+    
+    <table>
+    <tr><th>Chuỗi</th><th width="1%"></th><th align=left>Mô tả</th></tr>
+    <tr><td align=center>(AB</td><td></td><td>Nhịp đôi nhĩ</td></tr>
+    <tr><td align=center>(AFIB</td><td></td><td>Rung nhĩ</td></tr>
+    <tr><td align=center>(AFL</td><td></td><td>Cuồng nhĩ</td></tr>
+    <tr><td align=center>(B</td><td></td><td>Nhịp đôi thất</td></tr>
+    <tr><td align=center>(BII</td><td></td><td>Block tim cấp 2</td></tr>
+    <tr><td align=center>(IVR</td><td></td><td>Nhịp thất tự phát</td></tr>
+    <tr><td align=center>(N</td><td></td><td>Nhịp xoang bình thường</td></tr>
+    <tr><td align=center>(NOD</td><td></td><td>Nhịp nút (nối A-V)</td></tr>
+    <tr><td align=center>(P</td><td></td><td>Nhịp tạo nhịp</td></tr>
+    <tr><td align=center>(PREX</td><td></td><td>Tiền kích thích (WPW)</td></tr>
+    <tr><td align=center>(SBR</td><td></td><td>Nhịp xoang chậm</td></tr>
+    <tr><td align=center>(SVTA</td><td></td><td>Loạn nhịp nhanh trên thất</td></tr>
+    <tr><td align=center>(T</td><td></td><td>Nhịp ba thất</td></tr>
+    <tr><td align=center>(VFL</td><td></td><td>Cuồng thất</td></tr>
+    <tr><td align=center>(VT</td><td></td><td>Nhịp nhanh thất</td></tr>
+    </table>
+    
+    Trong một số trường hợp, các nhãn nhịp <tt>aux</tt> khác đã được sử dụng; xem tài liệu của cơ sở dữ liệu liên quan để biết thêm thông tin trong các trường hợp như vậy. Trong định dạng văn bản <tt>rdann</tt>, chuỗi <tt>aux</tt> xuất hiện ở cuối dòng (sau cột thứ sáu của đầu ra) cho bất kỳ chú thích nào có trường <tt>aux</tt> không rỗng; số byte được thêm vào trước không được hiển thị rõ ràng. Trong cửa sổ tín hiệu của LightWAVE, và trong các biểu đồ tương tự được tạo bởi các ứng dụng khác của PhysioToolkit, nếu <tt>aux</tt> có mặt, nó xuất hiện thay cho mã chú thích; theo quy ước, các nhãn nhịp <tt>aux</tt> xuất hiện bên dưới nhãn nhịp, và các chuỗi <tt>aux</tt> khác xuất hiện bên trên nhãn nhịp. Khi các dạng sóng được hiển thị ở các tỷ lệ nén mà các chuỗi <tt>aux</tt> có thể chồng chéo, một số chương trình này tự động hoặc tùy chọn tạo các phiên bản rút gọn của chuỗi <tt>aux</tt> để giữ cho hiển thị dễ đọc; tham khảo tài liệu của từng chương trình để biết thêm chi tiết [LightWAVE không làm điều này].
+    </li>
+    
+    <a name="link"></a>
+    <li>
+    Trường <tt>aux</tt> của một chú thích liên kết chứa một URL (định vị tài nguyên thống nhất, dưới dạng
+    <tt>http://machine.name/some/data</tt>). Các chú thích liên kết có thể được sử dụng để liên kết văn bản mở rộng, hình ảnh, hoặc dữ liệu khác với tệp chú thích. Nếu trường <tt>aux</tt> chứa bất kỳ khoảng trắng nào, văn bản sau khoảng trắng đầu tiên là mô tả (không phải là một phần của URL).
+    </li>
+    </ol>
 </html>

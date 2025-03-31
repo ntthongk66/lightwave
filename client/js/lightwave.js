@@ -937,17 +937,17 @@ function sync_edits() {
 	url: scribe,
 	success:  function(data, result) {
 		clearTimeout(timer);
-		// remove_editlog(db, record, annselected);
+		remove_editlog(db, record, annselected);
 		etext = '<p>Edits for record <b>' + sdb + '/' + record
 				+ '</b>, annotator <b>' + annselected
 				+ '</b> backed up successfully.';
-		cookie = ((data && data.url) || $.cookie("LWURL"));
-		if (cookie) {
-		cookie = new URL(cookie, scribe);
-		etext += '<p><a href="' + cookie
-			+ '/" target="other">Download'
-			+ ' (opens in another browser tab or window)</a>';
-		}
+		// cookie = ((data && data.url) || $.cookie("LWURL"));
+		// if (cookie) {
+		// cookie = new URL(cookie, scribe);
+		// etext += '<p><a href="' + cookie
+		//     + '/" target="other">Download'
+		//     + ' (opens in another browser tab or window)</a>';
+		// }
 		$('#syncnote').html(etext);			
 	},
 	statusCode: {
@@ -2656,6 +2656,11 @@ function remove_editlog(db, record, annselected) {
 	localStorage.removeItem(key);
 }
 
+// Clear localStorage on page reload or exit
+window.addEventListener("beforeunload", function () {
+	localStorage.clear();
+});
+
 function edlog(annot, etype) {
 	var etext = '', scn;
 
@@ -3071,6 +3076,11 @@ $(document).ready(function(){
 	parse_url();			// handle query string if present
 	help();				// load help into the help tab
 	set_handlers();			// set UI event handlers
+
+	// Clear localStorage on page reload or exit
+	window.addEventListener("beforeunload", function () {
+		localStorage.clear();
+	});
 });
 
 }());
