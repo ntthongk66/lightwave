@@ -937,7 +937,7 @@ function sync_edits() {
 	url: scribe,
 	success:  function(data, result) {
 	    clearTimeout(timer);
-	    remove_editlog(db, record, annselected);
+	    // remove_editlog(db, record, annselected);
 	    etext = '<p>Edits for record <b>' + sdb + '/' + record
 				+ '</b>, annotator <b>' + annselected
 				+ '</b> backed up successfully.';
