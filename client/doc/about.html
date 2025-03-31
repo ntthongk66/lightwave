@@ -7,84 +7,82 @@
 <link rel="stylesheet" href="../css/lightwave.css">
 </head>
 
-<h2>About LightWAVE</h2>
+<h2>Giới thiệu về LightWAVE</h2>
 
-<p> <b>LightWAVE</b> is a lightweight waveform and annotation viewer and editor.
-Use it to view any of the recordings of physiologic signals and time series
-in <a href="http://physionet.org/physiobank/database/">PhysioBank</a>, together
-with their annotations (event markers).
+<b>LightWAVE</b> là một trình xem và chỉnh sửa dạng sóng và nhãn.  
+Bạn có thể sử dụng nó để xem bất kỳ bản ghi tín hiệu sinh lý và chuỗi thời gian nào trong  
+<a href="http://physionet.org/physiobank/database/">PhysioBank</a>, cùng với các nhãn (dấu sự kiện) của chúng.
 
-<p> LightWAVE runs within <a href="browser-compatibility.html">any modern web
-browser</a> and does not require installation on the user's computer, tablet, or
-phone.  LightWAVE is free software licensed under
-the <a href="COPYING.html">GPL</a>.
+<p> LightWAVE chạy trên <a href="browser-compatibility.html">bất kỳ trình duyệt web hiện đại nào</a>  
+    và không yêu cầu cài đặt trên máy tính, máy tính bảng hoặc điện thoại của người dùng.  
+    LightWAVE là phần mềm miễn phí được cấp phép theo  
+    <a href="COPYING.html">GPL</a>.
 
-<h3>Getting started</h3>
+<h3>Bắt đầu sử dụng</h3>
 
 <ol>
-<li> On the <b>Choose input</b> tab, select one of PhysioBank's databases.
-(Learn more about them in PhysioBank's
-<a href="http://physionet.org/physiobank/database/">index</a>.)
+<li> Trong tab <b>Chọn đầu vào</b>, chọn một trong các cơ sở dữ liệu có sẵn. 
+</li>
 
-<li> Once you have chosen a database, a <b>Record</b> selector appears.  Choose
-a record.
+<li> Sau khi bạn đã chọn một cơ sở dữ liệu, một bộ chọn <b>Bản ghi</b> sẽ xuất hiện.  
+Hãy chọn một bản ghi.  
+</li>
 
-<li> Once you have chosen a record, LightWAVE's <b>View/edit</b> panel opens,
-showing the first 10 seconds of the record.
+<li> Khi bạn đã chọn một bản ghi, bảng <b>Xem/Chỉnh sửa</b> của LightWAVE sẽ mở ra,  
+hiển thị 10 giây đầu tiên của bản ghi.  
+</li>
 </ol>
 
-<h3>Controls:</h3>
+<h3>Điều chỉnh:</h3>
 
-<p> To find out how any LightWAVE control works, move the pointer over it,
-and a tooltip with a brief description will appear after a short
-interval.  Click (tap) a tab (Choose input, View/edit, etc.) to open it.
+<p> Để tìm hiểu cách bất kỳ điều khiển nào của LightWAVE hoạt động, hãy di chuyển con trỏ lên đó,  
+và một chú giải công cụ với mô tả ngắn sẽ xuất hiện sau một khoảng thời gian ngắn.  
+Nhấp (hoặc chạm) vào một tab (Chọn đầu vào, Xem/Chỉnh sửa, v.v.) để mở nó.
 
 <dl>
-<dt><b>Choose input</b></dt>
-<dd>Return here to select a different record.</dd>
+<dt><b>Chọn đầu vào</b></dt>
+<dd>Quay lại đây để chọn một bản ghi khác.</dd>
 
-<dt><b>View/edit</b></dt>
-<dd>This panel contains navigation controls and indicators along its top edge.
-Click the <button>&#9654;</button> button to start or pause <em>autoplay</em>.
-Below, the <em>signal window</em> shows an excerpt of the record named in the
-upper right corner.  The time indicators along the lower edge of the signal
-window indicate the elapsed time from the beginning of the record, in hours,
-minutes, and seconds.  The signal window is 10 seconds wide initially; use the
-slider below it at right to change its width.
+<dt><b>Xem/Chỉnh sửa</b></dt>
+<dd>Bảng này chứa các điều khiển điều hướng và chỉ báo dọc theo mép trên.  
+Nhấp vào nút <button>&#9654;</button> để bắt đầu hoặc tạm dừng <em>phát tự động</em>.  
+Bên dưới, <em>cửa sổ tín hiệu</em> hiển thị một đoạn của bản ghi có tên ở góc trên bên phải.  
+Các chỉ báo thời gian dọc theo mép dưới của cửa sổ tín hiệu cho biết thời gian đã trôi qua  
+từ lúc bắt đầu bản ghi, tính theo giờ, phút và giây.  
+Ban đầu, cửa sổ tín hiệu rộng 10 giây; sử dụng thanh trượt bên dưới ở phía phải để thay đổi độ rộng.
 
 <p>
-Use the navigation controls to view any other location in the record.  For
-example, enter a time in the box next to <b>Go to:</b>, then press [Enter] or
-click (tap) the <button><b>&#x21b4;</b></button> (refresh signal window) button.
+Sử dụng các điều khiển điều hướng để xem bất kỳ vị trí nào khác trong bản ghi.  
+Ví dụ, nhập thời gian vào ô bên cạnh <b>Đi tới:</b>, sau đó nhấn [Enter]  
+hoặc nhấp (chạm) vào nút <button><b>&#x21b4;</b></button> (làm mới cửa sổ tín hiệu).
 
-<p> Use the <button>Find...</button> button to specify a search target (a type
-of annotation to be found), then use the <button>&lt;&nbsp;Search</button>
-and <button>Search&nbsp;&gt;</button> buttons to find the previous or next
-occurrence of the target.  Clicking on <button>Find...</button> opens a dialog
-box.  Enter an annotation mnemonic, such as N, V, or A (hover over <b>Search
-for:</b> to see a tooltip that describes more options), and choose an
-annotation set to search if more than one set is available.
+<p> Sử dụng nút <button>Find...</button> để chỉ định mục tiêu tìm kiếm (một loại nhãn cần tìm),  
+sau đó sử dụng các nút <button>&lt;&nbsp;Search</button> và  
+<button>Search&nbsp;&gt;</button> để tìm lần xuất hiện trước hoặc sau của mục tiêu.  
+Nhấp vào <button>Find...</button> sẽ mở hộp thoại.  
+Nhập một mã nhãn, chẳng hạn như N, V hoặc A (di chuột qua <b>Tìm kiếm:</b> để xem  
+chú giải công cụ mô tả thêm tùy chọn) và chọn một bộ nhãn để tìm kiếm nếu có nhiều bộ nhãn khả dụng.
 
-<p> While autoplay is paused, click on any of the labels on the left side of the
-signal window to cycle among three display states (hidden, highlighted, and
-normal).  At most one signal and one annotation set may be highlighted at a
-time.  Change the scale of a highlighted signal using
-the <button>&#9650;</button> (expand), <button>=</button> (restore to default),
-and <button>&#9660;</button> (shrink) buttons.  Click on the red circle to hide
-or restore the grid, or the blue circle to hide or restore the annotation
-markers.
+<p> Khi chế độ phát tự động bị tạm dừng, nhấp vào bất kỳ nhãn nào ở phía bên trái của  
+cửa sổ tín hiệu để chuyển đổi giữa ba trạng thái hiển thị (ẩn, nổi bật và bình thường).  
+Chỉ có thể làm nổi bật tối đa một tín hiệu và một bộ nhãn cùng một lúc.  
+Thay đổi tỷ lệ của tín hiệu được làm nổi bật bằng cách sử dụng các nút  
+<button>&#9650;</button> (mở rộng), <button>=</button> (khôi phục mặc định),  
+và <button>&#9660;</button> (thu nhỏ).  
+Nhấp vào vòng tròn đỏ để ẩn hoặc khôi phục lưới, hoặc vòng tròn xanh để ẩn  
+hoặc khôi phục các dấu nhãn.
 </dd>
 
-<dt><b>Tables</b></dt>
-<dd>View details about the record, including text representations of the
-annotations and digitized signals.</dd>
+<dt><b>Bảng</b></dt>
+<dd>Xem chi tiết về bản ghi, bao gồm các biểu diễn văn bản của nhãn  
+và các tín hiệu số hóa.</dd>
 
-<dt><b>Settings</b></dt>
-<dd>Use the controls to modify LightWAVE's behavior.  Your changes persist until
-LightWAVE is reloaded.</dd>
+<dt><b>Cài đặt</b></dt>
+<dd>Sử dụng các điều khiển để tùy chỉnh cách hoạt động của LightWAVE.  
+Các thay đổi của bạn sẽ được giữ nguyên cho đến khi LightWAVE được tải lại.</dd>
 
-<dt><b>Help</b></dt>
-<dd>The <button>Main help</button> button shows this page.  Follow the
-links in <button>Help topics</button> to learn more.</dd>
+<dt><b>Trợ giúp</b></dt>
+<dd>Nút <button>Trợ giúp chính</button> hiển thị trang này.  
+Nhấp vào các liên kết trong <button>Chủ đề trợ giúp</button> để tìm hiểu thêm.</dd>
 </dl>
 </html>
