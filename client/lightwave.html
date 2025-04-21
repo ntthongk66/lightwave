@@ -96,12 +96,9 @@ provides some of the functions of LightWAVE without Javascript.
       <button class="eor" tabindex="7"
 		    title="Đến điểm kết thúc bản ghi">&#9655;|</button>
       <br>
-      <button class="srev" tabindex="5"
-	   title="tìm kiếm mục tiêu 'Tìm' trước đó">&#9665; Search</button>
-      <button class="find" tabindex="9"
-		    title="xác định mục tiêu tìm kiếm">Find...</button>
-      <button class="sfwd" tabindex="6"
-		   title="tìm kiếm mục tiêu 'Tìm' tiếp theo">Search &#9655;</button>
+      <button class="srev" tabindex="5" title="Chuyển đến kết quả trước đó">&#9665; Trước</button>
+      <button class="find" tabindex="9" title="Nhập từ khóa để tìm kiếm">Tìm kiếm...</button>
+      <button class="sfwd" tabindex="6" title="Chuyển đến kết quả tiếp theo">Tiếp &#9655;</button>
       </div>
     </td>
     </span>
@@ -110,64 +107,63 @@ provides some of the functions of LightWAVE without Javascript.
   </tr>
  </table>
 
- <div id="findbox" title="Find...">
+ <div id="findbox" title="Tìm kiếm...">
  <table width="100%">
  <tr><td align="center" title="Nhập một ký hiệu gán nhãn (N, V, S, ...)
 hoặc một chuỗi 'aux', hoặc một trong các tùy chọn sau:
 *v để khớp với bất kỳ nhịp ngoại tâm thu thất nào
 *s để khớp với bất kỳ nhịp ngoại tâm thu trên thất nào
 *n để khớp với bất kỳ loại nhịp khác
-*để khớp với bất kỳ nhãn hoặc dấu hiệu nào">Search&nbsp;for:&nbsp;<input
+*để khớp với bất kỳ nhãn hoặc dấu hiệu nào">Tìm&nbsp;kiếm:&nbsp;<input
   type="text" name="target" id="target" value="" size="4"></td></tr>
  <tr><td id="annsets" align="center">&nbsp;</td></tr>
  <tr><td align="center">
- <button class="srev" title="search for previous target">&#9665; Search</button>
- <button class="sfwd" title="search for next target">Search &#9655;</button><br>
+<button class="srev" title="Tìm kết quả trước">&#9665; Trước</button>
+<button class="sfwd" title="Tìm kết quả tiếp theo">Tiếp &#9655;</button><br>
  </td></tr></table>
  </div>
 
  <div id="add_typebox" title="Thêm một loại nhãn mới">
  <table width="100%">
- <tr title='Choose the primary annotation type.  If the desired
-choice is not in the list, choose " (comment) and
-enter the type as an Aux string.'>
-   <td align="right">Annotation&nbsp;type:&nbsp;</td>
+ <tr title='Chọn loại gán nhãn chính. Nếu lựa chọn 
+ mong muốn không có trong danh sách, hãy chọn " (ghi chú) 
+ và nhập loại đó dưới dạng chuỗi Aux.'>
+   <td align="right">Loại&nbsp;gán&nbsp;nhãn:&nbsp;</td>
    <td align="left">
-     <select name="edita" id="edita">
-     <option value="N"
-         selected>N (normal beat [displayed as &bull;])</option>
-     <option value="L">L (left bundle branch block beat)</option>
-     <option value="R">R (right bundle branch block beat)</option>
-     <option value="B">B (bundle branch block beat [L or R])
-     <option value="A">A (atrial premature beat)</option>
-     <option value="a">a (aberrated atrial premature beat)</option>
-     <option value="J">J (junctional premature beat)</option>
-     <option value="S">S (supraventricular premature beat [A or J])</option>
-     <option value="V">V (premature ventricular contraction)</option>
-     <option value="r">r (R-on-T premature ventricular contraction)</option>
-     <option value="F">F (fusion of V and N)</option>
-     <option value="e">e (atrial escape beat)</option>
-     <option value="j">j (junctional escape beat)</option>
-     <option value="n">n (supraventricular escape beat [e or j])</option>
-     <option value="E">E (ventricular escape beat)</option>
-     <option value="/">/ (paced beat)</option>
-     <option value="f">f (fusion of / and N)</option>
-     <option value="Q">Q (unclassifiable beat)</option>
-     <option disabled>&nbsp;&nbsp;[waveform peaks and limits]</option>
-     <option value="(">( (waveform onset)</option>
-     <option value=")">) (waveform end)</option>
-     <option value="p">p (peak of P-wave)</option>
-     <option value="t">t (peak of T-wave)</option>
-     <option value="u">u (peak of U-wave)</option>
-     <option value="`">` (PQ junction)</option>
-     <option value="'">' (J-point)</option>
-     <option disabled>&nbsp;&nbsp;[other non-beat types]</option>
-     <option value="|">| (isolated QRS-like artifact)</option>
-     <option value="+">+ (rhythm change [enter new rhythm in aux])</option>
-     <option value="s">s (ST segment change [describe in aux])</option>
-     <option value="~">~ (signal quality change [describe in aux])</option>
-     <option value='"'>" (comment [enter comment in aux])</option>
-     </select>
+    <select name="edita" id="edita">
+      <option value="N" selected>N (nhịp bình thường [hiển thị dưới dạng &bull;])</option>
+      <option value="L">L (nhịp block nhánh trái)</option>
+      <option value="R">R (nhịp block nhánh phải)</option>
+      <option value="B">B (nhịp block nhánh [trái hoặc phải])</option>
+      <option value="A">A (nhịp sớm nhĩ)</option>
+      <option value="a">a (nhịp sớm nhĩ dẫn truyền lệch)</option>
+      <option value="J">J (nhịp sớm nút nhĩ thất)</option>
+      <option value="S">S (nhịp sớm trên thất [A hoặc J])</option>
+      <option value="V">V (ngoại tâm thu thất)</option>
+      <option value="r">r (ngoại tâm thu thất rơi vào sóng T)</option>
+      <option value="F">F (hợp nhịp giữa V và N)</option>
+      <option value="e">e (nhịp thoát nhĩ)</option>
+      <option value="j">j (nhịp thoát nút nhĩ thất)</option>
+      <option value="n">n (nhịp thoát trên thất [e hoặc j])</option>
+      <option value="E">E (nhịp thoát thất)</option>
+      <option value="/">/ (nhịp tạo nhịp nhân tạo)</option>
+      <option value="f">f (hợp nhịp giữa / và N)</option>
+      <option value="Q">Q (nhịp không phân loại được)</option>
+      <option disabled>&nbsp;&nbsp;[đỉnh sóng và giới hạn]</option>
+      <option value="(">( (khởi đầu sóng)</option>
+      <option value=")">) (kết thúc sóng)</option>
+      <option value="p">p (đỉnh sóng P)</option>
+      <option value="t">t (đỉnh sóng T)</option>
+      <option value="u">u (đỉnh sóng U)</option>
+      <option value="`">` (nối PQ)</option>
+      <option value="'">' (điểm J)</option>
+      <option disabled>&nbsp;&nbsp;[các loại không phải nhịp]</option>
+      <option value="|">| (nhiễu giống QRS đơn lẻ)</option>
+      <option value="+">+ (thay đổi nhịp [nhập nhịp mới trong aux])</option>
+      <option value="s">s (thay đổi đoạn ST [mô tả trong aux])</option>
+      <option value="~">~ (thay đổi chất lượng tín hiệu [mô tả trong aux])</option>
+      <option value='"'>" (ghi chú [nhập ghi chú trong aux])</option>
+      </select>
     </td>
  </tr>
  <tr title='Nhịp tim mới, ghi chú, v.v.
@@ -190,24 +186,24 @@ Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
 (VFIB Rung thất
 (VFL Cuồng thất
 (VT Nhịp nhanh thất'>
-   <td align="right">Aux&nbsp;string:&nbsp;</td>
+   <td align="right">Chuỗi&nbsp;phụ&nbsp;(Aux):&nbsp;</td>
    <td align="left"><input type="text" name="editx" id="editx" value=""></td>
  </tr>
  <tr>
-   <td align="right">S/C/N:&nbsp;</td>
-   <td align="left">
-     <input type="text" name="edits" id="edits" size="4" value=""
-	    title="Subtype (an integer between -128 and 127)">/
-     <input type="text" name="editc" id="editc" size="3" value=""
-	    title="Chan (an integer between 0 and 255)">/
-     <input type="text" name="editn" id="editn" size="4" value=""
-	    title="Num (an integer between -128 and 127)">
-     (current annotation only)
-   </td>
+  <td align="right">S/C/N:&nbsp;</td>
+  <td align="left">
+    <input type="text" name="edits" id="edits" size="4" value=""
+           title="Phân loại phụ (một số nguyên từ -128 đến 127)">/
+    <input type="text" name="editc" id="editc" size="3" value=""
+           title="Kênh (một số nguyên từ 0 đến 255)">/
+    <input type="text" name="editn" id="editn" size="4" value=""
+           title="Số thứ tự (một số nguyên từ -128 đến 127)">
+    (chỉ áp dụng cho gán nhãn hiện tại)
+  </td>
  </tr>
 </table>
 
-<p>See <em>Help topics</em> -> <em>Standard annotation types</em> for more.
+<p>Xem <em>Chủ đề trợ giúp</em> -> <em>Các loại gán nhãn tiêu chuẩn</em> để biết thêm.</p>
 
 </div>
 
@@ -240,9 +236,9 @@ Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
 	  <td width="30%" style="text-align: center; vertical-align: middle">
 	    <span>
 	      <button style="background: #8d8" id="add_type"
-		      title="Thêm một loại mới vào bảng nhãn"><b>+</b></button>
+		      title="Thêm một loại mới vào bảng nhãn"><b>Thêm nhãn</b></button>
 	      <button title="Sao chép mục đã chọn vào bảng nhãn" id="copyann"
-		      style="background: #8d8">&#x21b3;</button>
+		      style="background: #8d8">Sao chép</button>
 	    </span>
 	    <button style="color: red; background-color: white"
 		    id="insert_mode" title="Đặt chế độ xóa (nhấp vào bất kỳ nút nào khác trong nhóm này để chuyển sang chế độ chèn)">&#9003;</button>
@@ -264,9 +260,9 @@ Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
 	<button title="Chọn nhãn ở bên phải điểm chỉnh sửa"
 		id="jumpright">&#8677;</button><br>
 	<button title="Khôi phục trạng thái trước chỉnh sửa gần nhất"
-		id="undo">Undo</button>
-	<button id="mark" title="Hoàn tất chỉnh sửa đang chờ xử lý">Mark</button>
-	<button id="redo" title="Áp dụng lại chỉnh sửa gần nhất">Redo</button>
+		id="undo">Hoàn tác</button>
+	<button id="mark" title="Hoàn tất chỉnh sửa đang chờ xử lý">Đánh dấu</button>
+	<button id="redo" title="Áp dụng lại chỉnh sửa gần nhất">Làm lại</button>
       </div>
     </td>
 
@@ -308,12 +304,9 @@ Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
       <button class="eor" tabindex="7"
 		    title="end of record">&#9655;|</button>
       <br>
-      <button class="srev" tabindex="5"
-	   title="search for previous 'Find' target">&#9665; Search</button>
-      <button class="find" tabindex="9"
-		    title="define search target">Find...</button>
-      <button class="sfwd" tabindex="6"
-		   title="search for next 'Find' target">Search &#9655;</button>
+      <button class="srev" tabindex="5" title="Chuyển đến kết quả trước đó">&#9665; Trước</button>
+      <button class="find" tabindex="9" title="Nhập từ khóa để tìm kiếm">Tìm kiếm...</button>
+      <button class="sfwd" tabindex="6" title="Chuyển đến kết quả tiếp theo">Tiếp &#9655;</button>
       </div>
     </td>
     </span>
@@ -401,8 +394,8 @@ Chuỗi phụ trợ tiêu chuẩn cho nhịp tim bắt đầu bằng "(":
 
  <table width="100%">
   <tr><td align="left">
-   <button id="help_about" title="Giới thiệu về LightWAVE: tổng quan, hướng dẫn bắt đầu và các liên kết để tìm hiểu thêm">Main help</button>
-   <button id="help_topics" title="Mục lục chủ đề">Help topics</button>
+   <button id="help_about" title="Giới thiệu về LightWAVE: tổng quan, hướng dẫn bắt đầu và các liên kết để tìm hiểu thêm">Trợ giúp chính</button>
+   <button id="help_topics" title="Mục lục chủ đề">Chủ đề trợ giúp</button>
    <button id="help_contacts"
    title="">Contacts</button></td>
    <td align="right"><div class="recann"></div></td>
